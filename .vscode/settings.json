@@ -1,0 +1,25 @@
+{
+  "cSpell.words": [
+    "commitlint",
+    "csstype",
+    "espree",
+    "fastq",
+    "humanwhocodes",
+    "meomullae",
+    "minimatch",
+    "nodelib",
+    "picocolors",
+    "pkgr",
+    "rushstack",
+    "scandir",
+    "tailwindcss",
+    "tostringtag",
+    "trimend"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": true,
+  "eslint.enable": true,
+  "eslint.validate": ["javascript", "typescript"]
+}
