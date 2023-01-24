@@ -1,4 +1,3 @@
-const rem0_10 = { ...Array.from(Array(11)).map((_, i) => `${i}rem`) };
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
