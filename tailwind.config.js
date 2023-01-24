@@ -12,11 +12,6 @@ module.exports = {
     preflight: false,
   },
   theme: {
-    extend: {
-      aspectRatio: {
-        '5/9': '5 / 9',
-      },
-      minWidth: rem0_10,
-    },
+    extend: {},
   },
 };
