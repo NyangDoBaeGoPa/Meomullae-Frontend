@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app';
 
 import 'tailwindcss/tailwind.css';
-import { HeaderLogo } from '@/components';
+import { HeaderLogo, MainChooseFlow } from '@/components';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -9,6 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <header>
         <HeaderLogo />
       </header>
+      <MainChooseFlow />
       <Component {...pageProps} />
     </>
   );
