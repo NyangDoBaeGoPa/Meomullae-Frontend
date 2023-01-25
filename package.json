@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "lint": "eslint \"{pages,src,apps,libs,test,utils}/**/*.ts\" --fix",
+    "format": "prettier --write \"{pages,src,apps,libs,test,utils}/**/*.ts\"",
     "prepare": "husky install"
   },
   "lint-staged": {
