@@ -1,4 +1,12 @@
+import { useState, useCallback } from 'react';
+
+import ModalInformation from '../MainInformationModal/main-information-modal.component';
+
 export const MainInformation = () => {
+  const [isOpenModal, setOpenModal] = useState<boolean>(false);
+  const onClickToggleModal = useCallback(() => {
+    setOpenModal(!isOpenModal);
+  }, [isOpenModal]);
   return (
     <>
       <div className="relative min-h-[40vh] h-fit bg-[#C4E6FF] text-center mx-3 font-sans">
@@ -10,9 +18,17 @@ export const MainInformation = () => {
         </div>
         <div className="text-[8px] md:text-[20px]">상황에 맞는 배달음식을 추천해주는,</div>
         <div className="font-semibold md:text-[25px] text-[8px]">🍴머물래🍴</div>
-        <button className="border-none bg-[#C4E6FF] hover:bg-blue-500 text-[10px] font-semibold md:text-[25px] m-5">
+        <button
+          className="border-none bg-[#C4E6FF] hover:bg-blue-500 text-[10px] font-semibold md:text-[25px] m-5"
+          onClick={onClickToggleModal}
+        >
           👀information
         </button>
+        {isOpenModal && (
+          <ModalInformation onClickToggleModal={onClickToggleModal}>
+            여기에 정보가 들어가용
+          </ModalInformation>
+        )}
       </div>
     </>
   );
