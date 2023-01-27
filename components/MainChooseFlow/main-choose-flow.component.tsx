@@ -3,7 +3,7 @@ import Link from 'next/link';
 export const MainChooseFlow = () => {
   return (
     <div className="relative mt-4 text-center">
-      <Link href="Mainhome">
+      <Link href="">
         <button className="inline-block bg-[#FFE7A9] hover:bg-yellow-300 m-1 rounded-xl p-6 text-center w-11/12 h-fit min-h-[20vh] md:w-[47vw] md:h-[36vh] border-none">
           <span className="text-[20px] md:text-[30px] font-bold p-4">Flow 1: Food details</span>
           <br></br>
@@ -13,7 +13,7 @@ export const MainChooseFlow = () => {
         </button>
       </Link>
 
-      <Link href="Flow2">
+      <Link href="survey">
         <button className="inline-block bg-[#FFE7A9] hover:bg-yellow-300 m-1 rounded-xl p-6 text-center w-11/12 h-fit min-h-[20vh] md:w-[47vw] md:h-[36vh] border-none">
           <span className="text-[20px] md:text-[30px] font-bold p-4">Flow 2: MBTI</span>
           <br></br>

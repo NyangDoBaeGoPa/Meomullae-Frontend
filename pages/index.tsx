@@ -1,13 +1,12 @@
-import Head from 'next/head';
 import 'tailwindcss/tailwind.css';
+import { HeaderLogo, MainChooseFlow, MainInformation } from '@/components';
 
-export default function Home() {
+export default function Mainhome() {
   return (
     <>
-      <Head>
-        <title>Create Next App</title>
-      </Head>
-      <main>초기 세팅 완료</main>
+      <HeaderLogo />
+      <MainInformation />
+      <MainChooseFlow />
     </>
   );
 }
