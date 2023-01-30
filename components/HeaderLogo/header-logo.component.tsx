@@ -3,7 +3,9 @@ import Link from 'next/link';
 export const HeaderLogo = () => {
   return (
     <Link href="./Mainhome">
-      <div className="top-9.8 text-center bg-[#A1C4DD] mx-3 h-[7vh] min-h-fit">헤더입니다.</div>
+      <div className="flex content-center bg-[#A1C4DD] w-full h-[50px] min-h-fit">
+        <img src="TeamLogo.png" className="m-auto h-[80%]" />
+      </div>
     </Link>
   );
 };
