@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import { useState, useCallback } from 'react';
 
+import { MainChooseFlow } from '../MainChooseFlow';
 import ModalInformation from '../MainInformationModal/main-information-modal.component';
 
 export const MainInformation = () => {
@@ -9,26 +11,67 @@ export const MainInformation = () => {
   }, [isOpenModal]);
   return (
     <>
-      <div className="relative min-h-[40vh] h-fit bg-[#C4E6FF] text-center mx-3 font-sans">
-        <div className="text-[25px] md:text-[40px] md:p-16 p-8 font-bold pt-16">
-          Welcome to MML!
+      <div className="bg-[#C4E6FF] text-center font-sans w-screen h-[calc(100vh-50px)]">
+        <div className="text-[24px] md:text-[40px] font-bold pt-6">
+          머물래에 오신 것을 환영합니다
         </div>
-        <div className="text-[8px] md:text-[20px] p-1">
-          메뉴 선정에 한 시간 걸리는 당신을 위해 준비했어요!
+        <div className="text-[16px] md:text-[20px] p-4">
+          상황에 맞는 배달음식을 추천해주는, 머물래
         </div>
-        <div className="text-[8px] md:text-[20px]">상황에 맞는 배달음식을 추천해주는,</div>
-        <div className="font-semibold md:text-[25px] text-[8px]">🍴머물래🍴</div>
-        <button
-          className="border-none bg-[#C4E6FF] hover:bg-blue-500 text-[10px] font-semibold md:text-[25px] m-5"
-          onClick={onClickToggleModal}
-        >
-          👀information
-        </button>
+        <span className="absolute">
+          <Image src="/Donut Bubble.svg" alt="도넛" width="300" height="300" />
+        </span>
+        <div className="m-auto">
+          <div className="text-[10px] absolute top-[200px] left-[120px]">
+            머물래는 간단한 설문을 통해
+            <br></br>
+            <b>취향과 상황에</b> 맞는{' '}
+            <b>
+              한양대 근처의
+              <br></br>배달음식을 추천
+            </b>
+            해드려요.
+            <br></br>이를 통해 머물래는 여러분의...
+          </div>
+          <Image src="/Icon.png" alt="icon" width="230" height="180" onClick={onClickToggleModal} />
+        </div>
         {isOpenModal && (
           <ModalInformation onClickToggleModal={onClickToggleModal}>
-            여기에 정보가 들어가용
+            <div className="text-[16px]">
+              머물래는 간단한 설문을 통해
+              <br></br>
+              <b>취향과 상황에</b> 맞는{' '}
+              <b>
+                한양대 근처의
+                <br></br>배달음식을 추천
+              </b>
+              해드려요.
+              <br></br>
+              <br></br>이를 통해 머물래는 여러분의
+              <br></br>
+              <b>메뉴선정 시간단축</b>에 도움을
+              <br></br>드리고자 만들게 되었어요.
+              <br></br>
+              <br></br>또한, 재밌게 즐기실 수 있도록
+              <br></br>
+              <b>MBTI 테스트</b>를 준비해보았어요.
+              <br></br>
+              <br></br>12가지 질문에 답을 하면
+              <br></br>자신의 MBTI를{' '}
+              <b>
+                음식으로 표현한
+                <br></br>결과
+              </b>
+              를 받아보실 수 있답니다 :)
+              <br></br>
+              <br></br>친구와 공유하며 즐거운
+              <br></br>시간을 보내시길 바라요!
+              <br></br>
+              <b>머물래에서 머물래?</b>
+            </div>
           </ModalInformation>
         )}
+        <MainChooseFlow />
       </div>
     </>
   );
