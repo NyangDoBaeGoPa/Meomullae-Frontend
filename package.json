@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint \"{pages,src,apps,libs,test,utils}/**/*.ts\" --fix",
-    "format": "prettier --write \"{pages,src,apps,libs,test,utils}/**/*.ts\"",
+    "lint": "eslint \"{pages,src,apps,libs,test,utils,provider}/**/*.ts\" --fix",
+    "format": "prettier --write \"{pages,src,apps,libs,test,utils,provider}/**/*.ts\"",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -21,7 +21,7 @@
     "@emotion/styled": "^11.10.5",
     "@material-ui/types": "^5.1.0",
     "@mui/icons-material": "^5.11.0",
-    "@mui/material": "^5.11.6",
+    "@mui/material": "^5.11.7",
     "@mui/styles": "^5.11.2",
     "@next/font": "13.1.2",
     "@types/node": "18.11.18",
