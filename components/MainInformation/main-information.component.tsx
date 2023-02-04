@@ -1,78 +1,71 @@
+import Box from '@mui/material/Box';
+import Button from '@mui/material/IconButton';
+import Modal from '@mui/material/Modal';
+import Typography from '@mui/material/Typography';
 import Image from 'next/image';
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 
 import { MainChooseFlow } from '../MainChooseFlow';
-import ModalInformation from '../MainInformationModal/main-information-modal.component';
 
 export const MainInformation = () => {
-  const [isOpenModal, setOpenModal] = useState<boolean>(false);
-  const onClickToggleModal = useCallback(() => {
-    setOpenModal(!isOpenModal);
-  }, [isOpenModal]);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
     <>
-      <div className="bg-[#C4E6FF] text-center font-sans w-screen h-[calc(100vh-50px)]">
-        <div className="text-[24px] md:text-[40px] font-bold pt-6">
-          머물래에 오신 것을 환영합니다
-        </div>
-        <div className="text-[16px] md:text-[20px] p-4">
-          상황에 맞는 배달음식을 추천해주는, 머물래
-        </div>
-        <span className="absolute">
-          <Image src="/Donut Bubble.svg" alt="도넛" width="300" height="300" />
-        </span>
-        <div className="m-auto">
-          <div className="text-[10px] absolute top-[200px] left-[120px]">
-            머물래는 간단한 설문을 통해
-            <br></br>
-            <b>취향과 상황에</b> 맞는{' '}
-            <b>
-              한양대 근처의
-              <br></br>배달음식을 추천
-            </b>
-            해드려요.
-            <br></br>이를 통해 머물래는 여러분의...
-          </div>
-          <Image src="/Icon.png" alt="icon" width="230" height="180" onClick={onClickToggleModal} />
-        </div>
-        {isOpenModal && (
-          <ModalInformation onClickToggleModal={onClickToggleModal}>
-            <div className="text-[16px]">
-              머물래는 간단한 설문을 통해
-              <br></br>
-              <b>취향과 상황에</b> 맞는{' '}
-              <b>
-                한양대 근처의
-                <br></br>배달음식을 추천
-              </b>
-              해드려요.
-              <br></br>
-              <br></br>이를 통해 머물래는 여러분의
-              <br></br>
-              <b>메뉴선정 시간단축</b>에 도움을
-              <br></br>드리고자 만들게 되었어요.
-              <br></br>
-              <br></br>또한, 재밌게 즐기실 수 있도록
-              <br></br>
-              <b>MBTI 테스트</b>를 준비해보았어요.
-              <br></br>
-              <br></br>12가지 질문에 답을 하면
-              <br></br>자신의 MBTI를{' '}
-              <b>
-                음식으로 표현한
-                <br></br>결과
-              </b>
-              를 받아보실 수 있답니다 :)
-              <br></br>
-              <br></br>친구와 공유하며 즐거운
-              <br></br>시간을 보내시길 바라요!
-              <br></br>
-              <b>머물래에서 머물래?</b>
-            </div>
-          </ModalInformation>
-        )}
-        <MainChooseFlow />
-      </div>
+      <Box className="flex flex-col w-full h-full bg-[#C4E6FF] justify-items-center">
+        <Box className="pt-5">
+          <Typography variant="h5" align="center">
+            머물래에 오신 것을 환영합니다
+          </Typography>
+        </Box>
+        <Box className="p-3">
+          <Typography variant="body1" align="center">
+            상황에 맞는 배달음식을 추천해주는, 머물래
+          </Typography>
+        </Box>
+        <Box className="relative text-center">
+          {/* 햄버거랑 뭐 이런 사진 어떻게 넣어야 할지 모르겠어요 ㅠㅠ */}
+          {/* <Image
+            src="/hamburger.png"
+            alt="햄버거"
+            width="300"
+            height="300"
+            className="absolute z-10"
+          /> */}
+          <Button aria-label="icon" onClick={handleOpen} className="justify-items-start">
+            <Image src="/Icon.png" alt="로고" width="300" height="220" />
+            <Box className="absolute top-9">
+              <Box typography="body2">머물래는 간단한 설문을 통해</Box>
+              <Box typography="body2">취향과 상황에 맞는 한양대 근처의</Box>
+              <Box typography="body2">배달음식을 추천해드려요.</Box>
+              <Box typography="body2">이를 통해 머물래는 여러분의...</Box>
+            </Box>
+          </Button>
+        </Box>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          {/* 모달창 mui에서 가져온 건데 bg-white가 적용이 안되네요... */}
+          <Box className="absolute w-80 h-110 rounded-[20px] bg-zinc-50">
+            <Typography id="modal-modal-title" variant="h6" component="h2"></Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              머물래는 간단한 설문을 통해 취향과 상황에 맞는 한양대 근처의 배달음식을 추천해드려요.
+              이를 통해 머물래는 여러분의 메뉴선정 시간단축에 도움을 드리고자 만들게 되었어요. 또한,
+              재밌게 즐기실 수 있도록 MBTI 테스트를 준비해보았어요. 12가지 질문에 답을 하면 자신의
+              MBTI를 음식으로 표현한 결과를 받아보실 수 있답니다 :) 친구와 공유하며 즐거운 시간을
+              보내시길 바라요! 머물래에서 머물래?
+            </Typography>
+          </Box>
+        </Modal>
+
+        <Box>
+          <MainChooseFlow />
+        </Box>
+      </Box>
     </>
   );
 };
