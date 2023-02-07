@@ -6,7 +6,6 @@ import { UIProvider } from '@/provider';
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      hello
       <UIProvider>
         <Component {...pageProps} />
       </UIProvider>
