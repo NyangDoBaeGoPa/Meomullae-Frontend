@@ -3,7 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const HeaderLogo = () => {
+export const LogoHeader = () => {
   return (
     <Box component="div" className="flex bg-[#A1C4DD] w-full h-16">
       <Link href="./">
