@@ -25,7 +25,7 @@ export const MBTIresult = () => {
                 <Box className="flex justify-center items-center text-center w-full py-1 px-24">
                   <Typography component="h6">음식 궁합</Typography>
                 </Box>
-                <Box className="flex flex-row justify-between items-center h-full w-full px-4">
+                <Box className="flex flex-row justify-between items-center h-full w-full p-4">
                   <Box className="flex h-[100px] w-[48%] rounded-[30px] bg-[#A8A8A8]">
                     <img
                       src="./images/sweetSourChicken.jpg"
