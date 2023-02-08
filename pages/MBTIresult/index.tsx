@@ -1,9 +1,8 @@
-import { HeaderLogo, MBTIresult } from '@/components';
+import { MBTIresult } from '@/components';
 
 export default function index() {
   return (
     <>
-      <HeaderLogo />
       <MBTIresult />
     </>
   );
