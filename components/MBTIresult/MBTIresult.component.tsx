@@ -1,26 +1,49 @@
+import { Box } from '@mui/material';
+import Typography from '@mui/material/Typography';
+
 export const MBTIresult = () => {
   return (
     <>
-      <div className="flex flex-col h-[100vh] w-full bg-[#FFF]">
-        <div className="flex flex-col h-[380px] w-[calc(100%-20px)] items-center mx-[10px] mt-[10px] bg-[#C4E6FF] rounded-[20px] shadow-md">
-          <p className="flex h-[40px] w-[cal(100%-90px)] mx-[45px] my-[10px] justify-center items-center text-center text-[15px] font-bold">
-            MBTI 결과에 따라 나온 음식 설명입니다.
-          </p>
-          <div className="flex h-[100px] w-[150px] rounded-[30px] bg-[#A8A8A8]">
+      <Box className="flex flex-col h-full w-full p-2.5 bg-[#FFF]">
+        <Box className="flex flex-col justify-start items-center h-[400px] w-full bg-[#C4E6FF] rounded-[20px] shadow-md">
+          <Box className="flex justify-center items-center text-center w-full pt-2.5 pb-1 px-11">
+            <Typography component="h6">MBTI 결과에 따라 나온 음식 설명입니다.</Typography>
+          </Box>
+          <Box className="flex justify-center items-center pt-1.5 pb-1 px-[25%] w-full">
             <img
               src="./images/blacktigerShrimp.jpg"
-              className="w-[100%] object-cover rounded-[30px]"
+              className="h-[100px] w-[150px] object-cover rounded-[30px]" // 크기 조정에 있어 padding으로만 설정하니 크기 맞추기가 쉽지 않아 임시로 고정값을 주었습니다.
             />
-          </div>
-          <div className="flex flex-col h-[150px] w-[calc(100%-50px)] mx-[25px] my-[10px] rounded-[30px] bg-[#D9D9D9]">
-            <p className="flex mx-auto my-[10px] text-[15px]">어느 음식이 나와 잘 맞을까요??</p>
-            <div className="flex flex-row justify-center items-center h-[100px] w-[calc(100%-30px)] mx-[15px] bg-[#fff]">
-              <div className="flex h-[100px] w-[100px] mr-[10px] rounded-[30px] bg-[#A8A8A8]"></div>
-              <div className="flex h-[100px] w-[100px] ml-[10px] rounded-[30px] bg-[#A8A8A8]"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+          </Box>
+          <Box className="flex flex-col items-center w-full px-6 pt-1.5 pb-1">
+            <Box className="flex flex-col justify-center items-center h-full w-full pb-4 bg-[#FFF7CB] rounded-[20px]">
+              <Box className="flex justify-center items-center text-center w-full py-1 px-24">
+                <Typography component="h6">음식 궁합</Typography>
+              </Box>
+              <Box className="flex flex-row justify-between items-center h-full w-full px-4">
+                <Box className="flex h-[100px] w-[120px] rounded-[30px] bg-[#A8A8A8]">
+                  <img
+                    src="./images/sweetSourChicken.jpg"
+                    className="h-full w-full object-cover rounded-[30px]" // 크기 조정에 있어 padding으로만 설정하니 크기 맞추기가 쉽지 않아 임시로 고정값을 주었습니다.
+                  />
+                </Box>
+                <Box className="flex h-[100px] w-[120px] rounded-[30px] bg-[#A8A8A8]">
+                  <img
+                    src="./images/gyudon.jpg"
+                    className="h-full w-full object-cover rounded-[30px]" // 크기 조정에 있어 padding으로만 설정하니 크기 맞추기가 쉽지 않아 임시로 고정값을 주었습니다.
+                  />
+                </Box>
+              </Box>
+            </Box>
+            <Box className="flex flex-col justify-center items-center pt-1.5 pb-1 px-16">
+              <Box className="flex justify-center items-center text-center w-full">
+                <Typography component="h6">결과에 만족하시나요?</Typography>
+              </Box>
+              <Box className="flex flex-row justify-center items-center w-full"></Box>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
     </>
   );
 };
