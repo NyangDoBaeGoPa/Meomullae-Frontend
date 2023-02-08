@@ -2,12 +2,12 @@ import { Rating, Divider, Box } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
 
-import { HeaderLogo } from '../HeaderLogo';
+import { HeaderLogo } from '@/components';
 
 export const MBTIresult = () => {
   return (
     <>
-      <Box className="flex flex-col h-[100vh] w-full" sx={{ alignItems: 'baseline' }}>
+      <Box className="flex flex-col h-[100vh] w-full">
         <HeaderLogo />
         <Box className="flex flex-col h-full w-full p-2.5">
           <Box className="flex flex-col justify-start items-center h-full w-full bg-[#C4E6FF] rounded-[20px] shadow-md">
@@ -59,7 +59,7 @@ export const MBTIresult = () => {
           <Box className="flex flex-row justify-between items-center h-full w-full py-2.5">
             <Link
               href="./"
-              className="flex justify-center items-center h-full w-[49%] bg-[#FFF7CB] rounded-[20px]"
+              className="flex justify-center items-center h-full w-[49%] bg-[#FFF7CB] rounded-[20px] shadow-md"
               style={{ textDecoration: 'none' }}
             >
               <Box className="flex flex-col justify-center items-center text-center h-full w-full">
@@ -69,7 +69,7 @@ export const MBTIresult = () => {
             </Link>
             <Link
               href="./"
-              className="flex justify-center items-center h-full w-[49%] bg-[#FFF7CB] rounded-[20px]"
+              className="flex justify-center items-center h-full w-[49%] bg-[#FFF7CB] rounded-[20px] shadow-md"
               style={{ textDecoration: 'none' }}
             >
               <Box className="flex flex-col justify-center items-center text-center h-full w-full">
