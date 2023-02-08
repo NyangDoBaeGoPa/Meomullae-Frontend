@@ -17,10 +17,10 @@ export const MBTIresult = () => {
             <Box className="flex justify-center items-center pt-1.5 pb-1 px-[25%] w-full">
               <img
                 src="./images/blacktigerShrimp.jpg"
-                className="h-[100px] w-[150px] object-cover rounded-[30px]" // 크기 조정에 있어 padding으로만 설정하니 크기 맞추기가 쉽지 않아 임시로 고정값을 주었습니다.
+                className="h-[100px] w-full object-cover rounded-[30px]" // 크기 조정에 있어 padding으로만 설정하니 크기 맞추기가 쉽지 않아 임시로 고정값을 주었습니다.
               />
             </Box>
-            <Box className="flex flex-col items-center h-[60%] w-full px-6 pt-1.5 pb-1">
+            <Box className="flex flex-col items-center h-full w-full px-6 pt-1.5 pb-1">
               <Box className="flex flex-col justify-center items-center h-full w-full pb-4 bg-[#FFF7CB] rounded-[20px]">
                 <Box className="flex justify-center items-center text-center w-full py-1 px-24">
                   <Typography component="h6">음식 궁합</Typography>
