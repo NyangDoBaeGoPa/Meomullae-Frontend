@@ -1,11 +1,14 @@
+import { Button, Box } from '@mui/material';
 import Link from 'next/link';
 
 export const HeaderLogo = () => {
   return (
-    <Link href="./Mainhome">
-      <div className="flex content-center bg-[#A1C4DD] w-full h-[50px] min-h-fit">
-        <img src="./images/TeamLogo.png" className="m-auto h-[80%]" />
-      </div>
-    </Link>
+    <Box className="flex justify-center bg-[#A1C4DD] w-full py-1 h-[50px] min-h-fit">
+      <Link href="./Mainhome">
+        <Button className="flex justify-center items-center h-[100%]">
+          <img src="./images/TeamLogo.png" className="flex h-[100%]" />
+        </Button>
+      </Link>
+    </Box>
   );
 };
