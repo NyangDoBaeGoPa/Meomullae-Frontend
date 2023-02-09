@@ -57,26 +57,30 @@ export const MBTIresult = () => {
             <Typography variant="h6">다시 테스트 해보시겠어요?</Typography>
           </Box>
           <Box className="flex flex-row justify-between items-center h-full w-full py-2.5">
-            <Link
-              href="./"
-              className="flex justify-center items-center h-full w-[49%] bg-[#FFF7CB] rounded-[20px] shadow-md"
-              style={{ textDecoration: 'none', color: '#000' }}
-            >
-              <Box className="flex flex-col justify-center items-center text-center h-full w-full">
-                <Typography variant="h6">Flow1</Typography>
-                <Typography variant="h6">Food details</Typography>
-              </Box>
-            </Link>
-            <Link
-              href="./"
-              className="flex justify-center items-center h-full w-[49%] bg-[#FFF7CB] rounded-[20px] shadow-md"
-              style={{ textDecoration: 'none', color: '#000' }}
-            >
-              <Box className="flex flex-col justify-center items-center text-center h-full w-full">
-                <Typography variant="h6">Flow2</Typography>
-                <Typography variant="h6">MBTI</Typography>
-              </Box>
-            </Link>
+            <Box className="flex justify-center items-center h-full w-[50%] pr-1">
+              <Link
+                href="./"
+                className="flex justify-center items-center h-full w-full bg-[#FFF7CB] rounded-[20px] shadow-md"
+                style={{ textDecoration: 'none', color: '#000' }}
+              >
+                <Box className="flex flex-col justify-center items-center text-center h-full w-full">
+                  <Typography variant="h6">Flow1</Typography>
+                  <Typography variant="h6">Food details</Typography>
+                </Box>
+              </Link>
+            </Box>
+            <Box className="flex justify-center items-center h-full w-[50%] pl-1">
+              <Link
+                href="./"
+                className="flex justify-center items-center h-full w-full bg-[#FFF7CB] rounded-[20px] shadow-md"
+                style={{ textDecoration: 'none', color: '#000' }}
+              >
+                <Box className="flex flex-col justify-center items-center text-center h-full w-full">
+                  <Typography variant="h6">Flow2</Typography>
+                  <Typography variant="h6">MBTI</Typography>
+                </Box>
+              </Link>
+            </Box>
           </Box>
         </Box>
       </Box>
