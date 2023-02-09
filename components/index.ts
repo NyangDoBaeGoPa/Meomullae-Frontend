@@ -6,3 +6,4 @@ export * from './LinearProgressWithLabel';
 export * from './GoOrBack';
 export * from './MBTIresult';
 export * from './FoodRecommendation';
+export * from './RecommendReason';
