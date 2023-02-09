@@ -7,7 +7,7 @@ import { ModalDescription } from './landing.const';
 import { LogoHeader, Modal, ModalRef } from '@/components';
 
 export const LandingScreen = () => {
-  const modalRef = useRef<ModalRef>();
+  const modalRef = useRef<ModalRef>(null);
 
   const handleClickButtonIcon = () => {
     const isModalOpened = modalRef.current?.isOpen;
