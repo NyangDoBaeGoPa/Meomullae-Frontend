@@ -1,19 +1,29 @@
 import { Box, Typography, Modal as MUIModal } from '@mui/material';
+import { forwardRef, useImperativeHandle, useState } from 'react';
 
 interface ModalProps {
-  isOpen: boolean;
-  onClose: () => void;
   title?: string;
   description?: string;
 }
 
-export const Modal = ({ isOpen, onClose, title, description }: ModalProps) => {
-  const handleClose = () => onClose();
+export interface ModalRef {
+  isOpen: boolean;
+  open: () => void;
+  close: () => void;
+}
+
+export const Modal = forwardRef<ModalRef, ModalProps>(({ title, description }, ref) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  useImperativeHandle(ref, () => ({
+    isOpen,
+    open: () => setIsOpen(true),
+    close: () => setIsOpen(false),
+  }));
 
   return (
     <MUIModal
       open={isOpen}
-      onClose={handleClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
       className="bg-zinc-50"
@@ -28,4 +38,4 @@ export const Modal = ({ isOpen, onClose, title, description }: ModalProps) => {
       </Box>
     </MUIModal>
   );
-};
+});
