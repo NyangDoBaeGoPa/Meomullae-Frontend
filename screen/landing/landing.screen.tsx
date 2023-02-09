@@ -37,7 +37,7 @@ export const LandingScreen = () => {
           /> */}
           <Button aria-label="icon" onClick={handleOpen} className="justify-items-start">
             <Image src="/Icon.png" alt="로고" width="300" height="220" />
-            <Box className="absolute top-9">
+            <Box className="absolute text-black top-9">
               <Box typography="body2">머물래는 간단한 설문을 통해</Box>
               <Box typography="body2">취향과 상황에 맞는 한양대 근처의</Box>
               <Box typography="body2">배달음식을 추천해드려요.</Box>
