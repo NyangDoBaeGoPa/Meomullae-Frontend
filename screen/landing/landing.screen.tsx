@@ -4,7 +4,7 @@ import { useRef } from 'react';
 
 import { ModalDescription } from './landing.const';
 
-import { LogoHeader, Modal, ModalRef } from '@/components';
+import { Header, Modal, ModalRef } from '@/components';
 
 export const LandingScreen = () => {
   const modalRef = useRef<ModalRef>(null);
@@ -22,7 +22,7 @@ export const LandingScreen = () => {
 
   return (
     <>
-      <LogoHeader />
+      <Header />
       <Modal ref={modalRef} description={ModalDescription} />
       <Box className="flex flex-col w-full h-full bg-[#C4E6FF] justify-items-center">
         <Box className="pt-5">
