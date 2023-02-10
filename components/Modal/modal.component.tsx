@@ -13,16 +13,18 @@ export interface ModalRef {
 export const Modal = forwardRef<ModalRef, ModalProps>(({ description }, ref) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const Description = ({ description }: ModalProps) => {
-    return (
-      <Box className="text-center">
-        {description.split('\n').map((txt) => (
-          <>
-            {txt}
-            <br />
-          </>
-        ))}
-      </Box>
-    );
+    if (description) {
+      return (
+        <Box className="text-center">
+          {description.split('\n').map((txt) => (
+            <>
+              {txt}
+              <br />
+            </>
+          ))}
+        </Box>
+      );
+    }
   };
 
   useImperativeHandle(ref, () => ({
