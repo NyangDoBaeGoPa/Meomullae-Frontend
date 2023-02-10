@@ -28,7 +28,7 @@ export const Modal = forwardRef<ModalRef, ModalProps>(({ title, description }, r
       aria-describedby="modal-modal-description"
       className="bg-zinc-50"
     >
-      <Box className="absolute w-80 h-110 rounded-[20px]">
+      <Box className="absolute w-80 h-110 rounded-[20px] bg-white">
         <Typography id="modal-modal-title" variant="h6" component="h2">
           {title}
         </Typography>

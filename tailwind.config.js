@@ -14,5 +14,10 @@ module.exports = {
   },
   theme: {
     extend: {},
+    colors: {
+      primary: '#512DA8',
+      secondary: '#FFEF2A',
+      basic: '#C0B3DF',
+    },
   },
 };

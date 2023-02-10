@@ -1,3 +1,4 @@
+import { deepPurple, grey } from '@mui/material/colors';
 import { createTheme, StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 import { ReactNode } from 'react';
 
@@ -11,6 +12,16 @@ const theme = createTheme({
   },
   components: {
     MuiTypography: {},
+  },
+  palette: {
+    primary: {
+      main: deepPurple[700],
+      contrastText: grey[50],
+    },
+    secondary: {
+      main: grey[50],
+      contrastText: deepPurple[700],
+    },
   },
 });
 
