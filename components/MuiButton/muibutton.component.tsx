@@ -6,14 +6,15 @@ interface MuiButtonProps {
   size?: undefined;
   title?: string;
   content?: string;
+  type?: boolean;
 }
 
-export const MuiButton = ({ Color, size, title, content, tail }: MuiButtonProps) => {
+export const MuiButton = ({ Color, size, title, content, tail, type }: MuiButtonProps) => {
   return (
     <>
       <Button
         color={Color ? 'primary' : 'secondary'}
-        variant="contained"
+        variant={type ? 'contained' : 'outlined'}
         size={size}
         className={tail}
       >

@@ -28,13 +28,11 @@ export const Modal = forwardRef<ModalRef, ModalProps>(({ title, description }, r
       aria-describedby="modal-modal-description"
       className="bg-zinc-50"
     >
-      <Box className="absolute w-80 h-110 rounded-[20px] bg-white">
-        <Typography id="modal-modal-title" variant="h6" component="h2">
+      <Box className="absolute w-80 h-110 rounded-[20px] bg-white z-10">
+        <Typography id="modal-modal-title" variant="h6">
           {title}
         </Typography>
-        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-          {description}
-        </Typography>
+        <Typography id="modal-modal-description">{description}</Typography>
       </Box>
     </MUIModal>
   );
