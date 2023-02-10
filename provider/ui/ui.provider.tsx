@@ -13,7 +13,6 @@ const theme = createTheme({
       //질문
       fontSize: 22,
       fontWeight: 600,
-      lineHeight: 36,
     },
     h2: {
       fontSize: 18,

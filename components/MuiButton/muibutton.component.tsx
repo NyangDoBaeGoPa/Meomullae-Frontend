@@ -7,9 +7,10 @@ interface MuiButtonProps {
   title?: string;
   content?: string;
   type?: boolean;
+  link?: string;
 }
 
-export const MuiButton = ({ Color, size, title, content, tail, type }: MuiButtonProps) => {
+export const MuiButton = ({ Color, size, title, content, tail, type, link }: MuiButtonProps) => {
   return (
     <>
       <Button
@@ -17,6 +18,7 @@ export const MuiButton = ({ Color, size, title, content, tail, type }: MuiButton
         variant={type ? 'contained' : 'outlined'}
         size={size}
         className={tail}
+        href={link}
       >
         <Box className="text-center">
           <Typography variant="body1" className="font-bold">

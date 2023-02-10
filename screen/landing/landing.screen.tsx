@@ -23,6 +23,7 @@ export const LandingScreen = () => {
 
   return (
     <>
+      {/* 이거 있으면 폰트 적용은 되는데 Hydration error가 뜹니다
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -30,7 +31,7 @@ export const LandingScreen = () => {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Nanum+Gothic&display=swap"
           rel="stylesheet"
         />
-      </head>
+      </head> */}
       <LogoHeader />
       <Modal ref={modalRef} description={ModalDescription} />
       <Box className="flex flex-col w-full h-[100vh] bg-basic/20 justify-items-center">
@@ -47,7 +48,7 @@ export const LandingScreen = () => {
         </Box>
 
         <Box className="flex justify-center pt-5 pb-3" onClick={handleClickButtonIcon}>
-          <Image src="/Group 9.png" alt="말풍선" width="355" height="205"></Image>
+          <Image src="/NoneBgColorChatBubble.png" alt="말풍선" width="355" height="205"></Image>
         </Box>
         <Box className="flex flex-col items-center">
           <MuiButton
@@ -56,6 +57,7 @@ export const LandingScreen = () => {
             title="Flow 1: 한양대 주변 메뉴별 맛집 추천"
             content={Flow1}
             type={true}
+            link="./survey"
           />
           <Box className="p-5" />
           <MuiButton
@@ -64,6 +66,7 @@ export const LandingScreen = () => {
             title="Flow 2: MBTI"
             content={Flow2}
             type={true}
+            link="./survey"
           />
         </Box>
       </Box>

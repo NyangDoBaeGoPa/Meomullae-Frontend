@@ -1,8 +1,7 @@
-import { Box, Typography, Modal as MUIModal } from '@mui/material';
+import { Box, Dialog as MUIModal } from '@mui/material';
 import { forwardRef, useImperativeHandle, useState } from 'react';
 
 interface ModalProps {
-  title?: string;
   description?: string;
 }
 
@@ -11,9 +10,21 @@ export interface ModalRef {
   open: () => void;
   close: () => void;
 }
-
-export const Modal = forwardRef<ModalRef, ModalProps>(({ title, description }, ref) => {
+export const Modal = forwardRef<ModalRef, ModalProps>(({ description }, ref) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const Description = ({ description }) => {
+    return (
+      <Box className="text-center">
+        {description.split('\n').map((txt) => (
+          <>
+            {txt}
+            <br />
+          </>
+        ))}
+      </Box>
+    );
+  };
 
   useImperativeHandle(ref, () => ({
     isOpen,
@@ -22,17 +33,14 @@ export const Modal = forwardRef<ModalRef, ModalProps>(({ title, description }, r
   }));
 
   return (
-    <MUIModal
-      open={isOpen}
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
-      className="bg-zinc-50"
-    >
-      <Box className="absolute w-80 h-110 rounded-[20px] bg-white z-10">
-        <Typography id="modal-modal-title" variant="h6">
-          {title}
-        </Typography>
-        <Typography id="modal-modal-description">{description}</Typography>
+    <MUIModal open={isOpen}>
+      <Box
+        className="text-center w-80 h-110"
+        onClick={() => {
+          setIsOpen(!isOpen);
+        }}
+      >
+        <Description description={description} />
       </Box>
     </MUIModal>
   );
