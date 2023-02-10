@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-icons/bs';
 
-import { LogoHeader } from '@/components';
+import { Header } from '@/components';
 
 export const FoodRecommendation = () => {
   const [name] = useState(['대연각', '금룡', '홍콩반점']);
@@ -11,7 +11,7 @@ export const FoodRecommendation = () => {
   return (
     <>
       <Box className="flex flex-col h-[100vh] w-full">
-        <LogoHeader />
+        <Header />
         <Box className="flex flex-col h-full w-full p-2.5">
           <Box className="flex justify-center items-center h-[40%] w-full pb-2.5">
             <Box className="flex flex-row justify-center items-center h-full w-full px-[15%] py-2.5 bg-[#C4E6FF] rounded-[20px] shadow-md">
