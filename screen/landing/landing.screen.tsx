@@ -23,15 +23,6 @@ export const LandingScreen = () => {
 
   return (
     <>
-      {/* 이거 있으면 폰트 적용은 되는데 Hydration error가 뜹니다
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Nanum+Gothic&display=swap"
-          rel="stylesheet"
-        />
-      </head> */}
       <LogoHeader />
       <Modal ref={modalRef} description={ModalDescription} />
       <Box className="flex flex-col w-full h-[100vh] bg-basic justify-items-center">

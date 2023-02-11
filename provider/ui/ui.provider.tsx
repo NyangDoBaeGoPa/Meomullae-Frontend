@@ -10,7 +10,6 @@ const theme = createTheme({
   typography: {
     fontFamily: ['Inter'].join(','),
     h1: {
-      //질문
       fontSize: 22,
       fontWeight: 600,
     },
