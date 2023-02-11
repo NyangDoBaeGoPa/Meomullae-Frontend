@@ -2,6 +2,9 @@
 
 - Notion Task Board (link):
 - Issue (Link)
+
+1.  https://nextjs.org/docs/basic-features/font-optimization : 폰트 적용
+
 - Slack (link):
 - Others:
 

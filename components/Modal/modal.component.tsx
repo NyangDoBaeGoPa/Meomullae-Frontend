@@ -12,20 +12,8 @@ export interface ModalRef {
 }
 export const Modal = forwardRef<ModalRef, ModalProps>(({ description }, ref) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const Description = ({ description }: ModalProps) => {
-    if (description) {
-      return (
-        <Box className="text-center">
-          {description.split('\n').map((txt) => (
-            <>
-              {txt}
-              <br />
-            </>
-          ))}
-        </Box>
-      );
-    }
-    return <></>;
+  const handleClickModal = () => {
+    setIsOpen(!isOpen);
   };
 
   useImperativeHandle(ref, () => ({
@@ -35,14 +23,18 @@ export const Modal = forwardRef<ModalRef, ModalProps>(({ description }, ref) => 
   }));
 
   return (
-    <MUIModal open={isOpen}>
-      <Box
-        className="text-center w-80 h-110"
-        onClick={() => {
-          setIsOpen(!isOpen);
-        }}
-      >
-        <Description description={description} />
+    <MUIModal open={isOpen} onClick={handleClickModal}>
+      <Box className="text-center w-80 h-110">
+        {description && (
+          <Box className="text-center">
+            {description.split('\n').map((txt) => (
+              <>
+                {txt}
+                <br />
+              </>
+            ))}
+          </Box>
+        )}
       </Box>
     </MUIModal>
   );
