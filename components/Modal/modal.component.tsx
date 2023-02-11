@@ -25,6 +25,7 @@ export const Modal = forwardRef<ModalRef, ModalProps>(({ description }, ref) => 
         </Box>
       );
     }
+    return <></>;
   };
 
   useImperativeHandle(ref, () => ({
