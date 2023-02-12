@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Stack } from '@mui/material';
 import Image from 'next/image';
 import { useRef } from 'react';
 
@@ -41,25 +41,27 @@ export const LandingScreen = () => {
         <Box className="flex justify-center pt-5 pb-3" onClick={handleClickButtonIcon}>
           <Image src="/NoneBgColorChatBubble.png" alt="말풍선" width="355" height="205"></Image>
         </Box>
-        <Box className="flex flex-col items-center">
-          <MuiButton
-            Color={false}
-            tail="p-5 text-black shadow-md w-11/12 h-25 rounded-main"
-            title="Flow 1: 한양대 주변 메뉴별 맛집 추천"
-            content={Flow1}
-            type={true}
-            link="./survey"
-          />
-          <Box className="p-5" />
-          <MuiButton
-            Color={false}
-            tail="p-5 text-black shadow-md w-11/12 h-25 rounded-main"
-            title="Flow 2: MBTI"
-            content={Flow2}
-            type={true}
-            link="./survey"
-          />
-        </Box>
+
+        <Stack spacing={2.5}>
+          <Box className="text-center">
+            <MuiButton
+              color="secondary"
+              className="w-11/12 p-5 shadow-md h-25 rounded-main"
+              title="Flow 1: 한양대 주변 메뉴별 맛집 추천"
+              content={Flow1}
+              link="./survey"
+            />
+          </Box>
+          <Box className="text-center">
+            <MuiButton
+              color="secondary"
+              className="w-11/12 p-5 shadow-md h-25 rounded-main"
+              title="Flow 2: MBTI"
+              content={Flow2}
+              link="./survey"
+            />
+          </Box>
+        </Stack>
       </Box>
     </>
   );

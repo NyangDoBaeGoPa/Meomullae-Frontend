@@ -12,32 +12,20 @@ export const SurveyScreen = () => {
         </Box>
         <Box className="flex flex-col items-center">
           <MuiButton
-            Color={false}
-            tail="p-5 shadow-md w-11/12 h-15 rounded-main"
+            color="secondary"
+            className="w-11/12 p-5 shadow-md h-15 rounded-main"
             title="남자"
-            type={true}
           />
           <Box className="pt-5" />
           <MuiButton
-            Color={false}
-            tail="p-5 shadow-md w-11/12 h-15 rounded-main"
+            color="secondary"
+            className="w-11/12 p-5 shadow-md h-15 rounded-main"
             title="여자"
-            type={true}
           />
         </Box>
         <Box className="flex justify-center pt-14">
-          <MuiButton
-            Color={true}
-            tail="w-5/11 h-10 px-13 rounded-main"
-            title="뒤로가기"
-            type={false}
-          />
-          <MuiButton
-            Color={true}
-            tail="px-13 w-5/11 h-10 rounded-main"
-            title="다음으로"
-            type={true}
-          />
+          <MuiButton className="h-10 w-5/11 px-13 rounded-main" title="뒤로가기" type="outlined" />
+          <MuiButton className="h-10 px-13 w-5/11 rounded-main" title="다음으로" />
         </Box>
       </Box>
     </>

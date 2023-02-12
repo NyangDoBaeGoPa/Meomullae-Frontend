@@ -6,7 +6,7 @@ export const LogoHeader = () => {
   return (
     <Box component="div" className="flex bg-[#A1C4DD] w-full h-15">
       <Link href="./">
-        <IconButton aria-label="logo"></IconButton>
+        <IconButton aria-label="logo" />
       </Link>
     </Box>
   );
