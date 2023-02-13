@@ -1,4 +1,4 @@
-import { RecommendReason } from '@/components';
+import { RecommendReason } from '@/screen';
 
 export default function index() {
   return (
