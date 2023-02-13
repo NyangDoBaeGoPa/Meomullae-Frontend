@@ -4,7 +4,7 @@ import { useRef } from 'react';
 
 import { ModalDescription, Flow1, Flow2, Hello, Intro, Mml } from './landing.const';
 
-import { LogoHeader, Modal, ModalRef, MuiButton } from '@/components';
+import { LogoHeader, Modal, ModalRef, Button } from '@/components';
 
 export const LandingScreen = () => {
   const modalRef = useRef<ModalRef>(null);
@@ -49,8 +49,9 @@ export const LandingScreen = () => {
           spacing={4}
           alignItems="center"
           justifyItems="center"
+          justifyContent="center"
         >
-          <MuiButton
+          <Button
             className="w-11/12 p-5 shadow-md md:w-5/12 md:h-40 rounded-main hover:bg-secondary/50"
             title={Flow1}
             href="./survey"
@@ -58,7 +59,7 @@ export const LandingScreen = () => {
             variant="contained"
             color="button"
           />
-          <MuiButton
+          <Button
             className="w-11/12 p-5 shadow-md md:w-5/12 md:h-40 rounded-main hover:bg-secondary/50"
             title={Flow2}
             href="./survey"

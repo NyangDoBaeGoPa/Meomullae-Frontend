@@ -1,6 +1,6 @@
 import { Box, Typography, Stack } from '@mui/material';
 
-import { LogoHeader, MuiButton } from '@/components';
+import { LogoHeader, Button } from '@/components';
 
 export const SurveyScreen = () => {
   return (
@@ -13,13 +13,13 @@ export const SurveyScreen = () => {
         <Box className="flex justify-center w-full">
           <Box className="w-11/12">
             <Stack spacing={2.5} alignItems="stretch" justifyContent="center">
-              <MuiButton
+              <Button
                 color="secondary"
                 className="rounded-main h-14"
                 title="남자"
                 typography="answer_regular"
               />
-              <MuiButton
+              <Button
                 color="secondary"
                 className="rounded-main h-14"
                 title="여자"
@@ -31,13 +31,13 @@ export const SurveyScreen = () => {
         <Box className="flex justify-center pt-14">
           <Box className="w-11/12">
             <Stack spacing={0.3215} direction="row" justifyContent="center" alignItems="stretch">
-              <MuiButton
+              <Button
                 className="w-full h-10 border-2 border-primary rounded-main"
                 title="뒤로가기"
                 variant="outlined"
                 typography="next_bold"
               />
-              <MuiButton
+              <Button
                 className="w-full h-10 rounded-main"
                 title="다음으로"
                 typography="next_bold"
