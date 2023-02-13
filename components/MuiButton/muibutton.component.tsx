@@ -1,4 +1,4 @@
-import { Button, Typography, Box, Stack } from '@mui/material';
+import { Button, Box, Stack } from '@mui/material';
 
 interface MuiButtonProps {
   color?: 'primary' | 'secondary';
@@ -8,6 +8,8 @@ interface MuiButtonProps {
   content?: string;
   type?: 'contained' | 'outlined';
   link?: string;
+  typography?: 'button_regular' | 'next_bold' | 'answer_regular' | 'back';
+  typographyContent?: 'button_regular' | 'next_bold' | 'answer_regular' | 'back';
 }
 
 export const MuiButton = ({
@@ -18,18 +20,16 @@ export const MuiButton = ({
   className,
   type = 'contained',
   link,
+  typography = 'button_regular',
+  typographyContent = 'button_regular',
 }: MuiButtonProps) => {
   return (
     <>
       <Button color={color} variant={type} size={size} className={className} href={link}>
         <Box className="text-center">
           <Stack spacing={0.5}>
-            {title && (
-              <Typography variant="body1" className="font-bold">
-                {title}
-              </Typography>
-            )}
-            {content && <Typography variant="body2">{content}</Typography>}
+            {title && <Box typography={typography}>{title}</Box>}
+            {content && <Box typography={typographyContent}>{content}</Box>}
           </Stack>
         </Box>
       </Button>
