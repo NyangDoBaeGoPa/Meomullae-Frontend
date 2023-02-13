@@ -5,7 +5,7 @@ import { Header } from '@/components';
 export const MBTIresult = () => {
   return (
     <>
-      <Box className="flex flex-col h-[100vh] w-full justify-items-center" bgcolor="primary.light">
+      <Box className="flex flex-col h-full w-full justify-items-center" bgcolor="primary.light">
         <Header></Header>
       </Box>
       {/* <Box className="flex flex-col h-[100vh] w-full">

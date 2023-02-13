@@ -6,7 +6,7 @@ export const SurveyScreen = () => {
   return (
     <>
       <Header></Header>
-      <Box className="flex flex-col w-full h-[100vh] bg-basic justify-items-center">
+      <Box className="flex flex-col w-full bg-basic justify-items-center">
         <Box className="p-5 text-center">
           <Typography variant="h1">당신의 성별을 알려주세요!</Typography>
         </Box>
