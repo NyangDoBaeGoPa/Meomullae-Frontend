@@ -28,6 +28,7 @@ const theme = createTheme({
   palette: {
     primary: {
       main: deepPurple[700],
+      light: 'rgba(192, 179, 223, 0.2)',
     },
   },
 });

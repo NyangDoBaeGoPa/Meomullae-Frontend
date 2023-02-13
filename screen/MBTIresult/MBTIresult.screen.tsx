@@ -1,15 +1,15 @@
-import { Rating, Divider, Box } from '@mui/material';
-import Typography from '@mui/material/Typography';
-import Link from 'next/link';
+import { Box } from '@mui/material';
 
 import { Header } from '@/components';
 
 export const MBTIresult = () => {
   return (
     <>
-      <Box className="flex flex-col h-[100vh] w-full">
-        <Header />
-        <Box className="flex flex-col h-full w-full p-2.5">
+      <Box className="flex flex-col h-[100vh] w-full justify-items-center" bgcolor="primary.light">
+        <Header></Header>
+      </Box>
+      {/* <Box className="flex flex-col h-[100vh] w-full">
+        <Box className="flex flex-col h-full w-full">
           <Box className="flex flex-col justify-start items-center h-full w-full bg-[#C4E6FF] rounded-[20px] shadow-md">
             <Box className="flex justify-center items-center text-center w-full pt-2.5 pb-1 px-11">
               <Typography variant="h6">MBTI 결과에 따라 나온 음식 설명입니다.</Typography>
@@ -83,7 +83,7 @@ export const MBTIresult = () => {
             </Box>
           </Box>
         </Box>
-      </Box>
+      </Box> */}
     </>
   );
 };
