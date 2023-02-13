@@ -8,7 +8,19 @@ type Props = {
 
 const theme = createTheme({
   typography: {
-    fontFamily: ['Roboto'].join(','),
+    fontFamily: ['Inter'].join(','),
+    h1: {
+      fontSize: 22,
+      fontWeight: 600,
+    },
+    h2: {
+      fontSize: 18,
+      fontWeight: 600,
+    },
+    h3: {
+      fontSize: 16,
+      fontWeight: 800,
+    },
   },
   components: {
     MuiTypography: {},

@@ -1,12 +1,12 @@
 import { Typography, Box } from '@mui/material';
 
-import { LogoHeader } from '@/components';
+import { Header } from '@/components';
 
 export const RecommendReason = () => {
   return (
     <>
       <Box className="flex flex-col h-[100vh] w-full">
-        <LogoHeader />
+        <Header />
         <Box className="flex flex-col h-full w-full p-2.5">
           <Box className="flex flex-col justify-start items-center h-full w-full p-2.5 bg-[#C4E6FF] rounded-[20px] shadow-md">
             <Box className="flex justify-center items-center h-[40%] w-full pb-1 rounded-[20px]">

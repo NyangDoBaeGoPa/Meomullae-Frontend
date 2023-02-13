@@ -1,4 +1,4 @@
-import { FoodRecommendation } from '@/components';
+import { FoodRecommendation } from '@/screen';
 
 export default function index() {
   return (

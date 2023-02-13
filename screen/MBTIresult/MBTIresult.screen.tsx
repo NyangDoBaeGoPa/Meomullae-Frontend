@@ -2,13 +2,13 @@ import { Rating, Divider, Box } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
 
-import { LogoHeader } from '@/components';
+import { Header } from '@/components';
 
 export const MBTIresult = () => {
   return (
     <>
       <Box className="flex flex-col h-[100vh] w-full">
-        <LogoHeader />
+        <Header />
         <Box className="flex flex-col h-full w-full p-2.5">
           <Box className="flex flex-col justify-start items-center h-full w-full bg-[#C4E6FF] rounded-[20px] shadow-md">
             <Box className="flex justify-center items-center text-center w-full pt-2.5 pb-1 px-11">

@@ -1,4 +1,4 @@
-import { MBTIresult } from '@/components';
+import { MBTIresult } from '@/screen';
 
 export default function index() {
   return (
