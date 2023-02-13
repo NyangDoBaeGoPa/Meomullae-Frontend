@@ -21,7 +21,7 @@ export const LandingScreen = () => {
     <>
       <LogoHeader />
       <Modal ref={modalRef} description={ModalDescription} />
-      <Box className="flex flex-col w-full h-[100vh] bg-basic justify-items-center">
+      <Box className="flex flex-col w-full h-[100vh] justify-items-center" bgcolor="primary.light">
         <Box className="pt-4 leading-9 text-center" typography="h1">
           머물래에 오신 것을 환영합니다
         </Box>

@@ -76,6 +76,7 @@ const theme = createTheme({
     primary: {
       main: deepPurple[700],
       contrastText: grey[50],
+      light: 'rgba(192, 179, 223, 0.2)',
     },
     secondary: {
       main: grey[50],

@@ -6,7 +6,7 @@ export const SurveyScreen = () => {
   return (
     <>
       <LogoHeader></LogoHeader>
-      <Box className="flex flex-col w-full h-[100vh] bg-basic justify-items-center">
+      <Box className="flex flex-col w-full h-[100vh] justify-items-center" bgcolor="primary.light">
         <Box className="p-5 text-center">
           <Typography variant="question_semibold">당신의 성별을 알려주세요!</Typography>
         </Box>
@@ -32,7 +32,7 @@ export const SurveyScreen = () => {
           <Box className="w-11/12">
             <Stack spacing={0.3215} direction="row" justifyContent="center" alignItems="stretch">
               <MuiButton
-                className="w-full h-10 bg-white border-2 border-primary rounded-main"
+                className="w-full h-10 border-2 border-primary rounded-main"
                 title="뒤로가기"
                 type="outlined"
                 typography="next_bold"

@@ -1,4 +1,5 @@
 import { Box, Dialog as MUIModal } from '@mui/material';
+import Parser from 'html-react-parser';
 import { forwardRef, useImperativeHandle, useState } from 'react';
 
 interface ModalProps {
@@ -23,19 +24,17 @@ export const Modal = forwardRef<ModalRef, ModalProps>(({ description }, ref) => 
   }));
 
   return (
-    <MUIModal open={isOpen} onClick={handleClickModal}>
-      <Box className="text-center w-80 h-110">
-        {description && (
-          <Box className="text-center">
-            {description.split('\n').map((txt) => (
-              <>
-                {txt}
-                <br />
-              </>
-            ))}
-          </Box>
-        )}
-      </Box>
+    <MUIModal
+      open={isOpen}
+      onClick={handleClickModal}
+      sx={{ textAlign: 'center', alignContent: 'center' }}
+      PaperProps={{ sx: { width: '315px', height: '440px' } }}
+    >
+      {description && (
+        <Box className="whitespace-pre-wrap" typography="h2">
+          {Parser(description)}
+        </Box>
+      )}
     </MUIModal>
   );
 });
