@@ -23,6 +23,8 @@ export const Modal = forwardRef<ModalRef, ModalProps>(({ description }, ref) => 
     close: () => setIsOpen(false),
   }));
 
+  const replacedDescription = description?.replace(/\n/g, '<br />');
+
   return (
     <MUIModal
       open={isOpen}
@@ -38,9 +40,9 @@ export const Modal = forwardRef<ModalRef, ModalProps>(({ description }, ref) => 
         },
       }}
     >
-      {description && (
+      {replacedDescription && (
         <Box className="whitespace-pre-wrap" typography="h2">
-          {Parser(description)}
+          {Parser(replacedDescription)}
         </Box>
       )}
     </MUIModal>
