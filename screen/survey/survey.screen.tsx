@@ -34,7 +34,7 @@ export const SurveyScreen = () => {
               <MuiButton
                 className="w-full h-10 border-2 border-primary rounded-main"
                 title="뒤로가기"
-                type="outlined"
+                variant="outlined"
                 typography="next_bold"
               />
               <MuiButton

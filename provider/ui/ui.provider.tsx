@@ -1,10 +1,15 @@
-import { deepPurple, grey } from '@mui/material/colors';
+import { deepPurple, grey, yellow } from '@mui/material/colors';
 import { createTheme, StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 import { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
 };
+declare module '@mui/material' {
+  interface ButtonPropsColorOverrides {
+    button: true;
+  }
+}
 declare module '@mui/material/styles' {
   interface TypographyVariants {
     h2_extrabold: React.CSSProperties;
@@ -22,6 +27,12 @@ declare module '@mui/material/styles' {
     answer_regular?: React.CSSProperties;
     next_bold?: React.CSSProperties;
   }
+  interface Palette {
+    button: Palette['primary'];
+  }
+  interface PaletteOptions {
+    button: PaletteOptions['primary'];
+  }
 }
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
@@ -33,6 +44,7 @@ declare module '@mui/material/Typography' {
     next_bold: true;
   }
 }
+
 const theme = createTheme({
   typography: {
     fontFamily: ['Inter'].join(','),
@@ -79,10 +91,15 @@ const theme = createTheme({
       light: 'rgba(192, 179, 223, 0.2)',
     },
     secondary: {
+      main: yellow[400],
+      contrastText: grey[900],
+    },
+    button: {
       main: grey[50],
       contrastText: grey[900],
     },
   },
+  spacing: 4,
 });
 
 export const UIProvider = ({ children }: Props) => {

@@ -16,3 +16,9 @@ export const ModalDescription = `머물래는 간단한 설문을 통해<br>
 친구와 공유하며 즐거운<br>
 시간을 보내시길 바라요!<br>
 <b>머물래에서 머물래?</b>`;
+
+export const Flow1 = `한양대 근처 배달 맛집 추천 받기`;
+export const Flow2 = `나의 MBTI는 무슨 음식일까?`;
+export const Hello = `머물래에 오신 것을 환영합니다`;
+export const Intro = `상황에 맞는 배달음식을 추천해주는,`;
+export const Mml = `머물래`;

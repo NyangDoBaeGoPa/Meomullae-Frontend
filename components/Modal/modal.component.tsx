@@ -27,8 +27,16 @@ export const Modal = forwardRef<ModalRef, ModalProps>(({ description }, ref) => 
     <MUIModal
       open={isOpen}
       onClick={handleClickModal}
-      sx={{ textAlign: 'center', alignContent: 'center' }}
-      PaperProps={{ sx: { width: '315px', height: '440px' } }}
+      PaperProps={{
+        sx: {
+          width: '315px',
+          height: '440px',
+          borderRadius: '30px',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
+        },
+      }}
     >
       {description && (
         <Box className="whitespace-pre-wrap" typography="h2">

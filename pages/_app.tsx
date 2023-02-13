@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import 'tailwindcss/tailwind.css';
 
 import { UIProvider } from '@/provider';
+import '../styles/globals.css';
 
 const inter = Inter({
   subsets: ['latin'],

@@ -2,8 +2,7 @@ import { Box, Typography, Stack } from '@mui/material';
 import Image from 'next/image';
 import { useRef } from 'react';
 
-import { ModalDescription } from './landing.const';
-import { Flow1, Flow2 } from './landing.flow';
+import { ModalDescription, Flow1, Flow2, Hello, Intro, Mml } from './landing.const';
 
 import { LogoHeader, Modal, ModalRef, MuiButton } from '@/components';
 
@@ -21,40 +20,52 @@ export const LandingScreen = () => {
     <>
       <LogoHeader />
       <Modal ref={modalRef} description={ModalDescription} />
-      <Box className="flex flex-col w-full h-[100vh] justify-items-center" bgcolor="primary.light">
-        <Box className="pt-4 leading-9 text-center" typography="h1">
-          머물래에 오신 것을 환영합니다
+      <Box className="flex flex-col justify-center bg-basic">
+        <Box className="pt-5 leading-9 text-center" typography="h1">
+          {Hello}
         </Box>
-        <Box className="pt-3 leading-9 text-center">
+        <Box className="pt-4 leading-9 text-center">
           <Typography component="span" variant="h2">
-            상황에 맞는 배달음식을 추천해주는,
+            {Intro}
             <Typography component="span" variant="h2_extrabold" className="pl-1 text-primary">
-              머물래
+              {Mml}
             </Typography>
           </Typography>
         </Box>
-        <Box className="flex justify-center pt-5 pb-3" onClick={handleClickButtonIcon}>
-          <Image src="/NoneBgColorChatBubble.png" alt="말풍선" width="355" height="205"></Image>
+        <Box className="flex justify-center" onClick={handleClickButtonIcon}>
+          <Image
+            src="https://res.cloudinary.com/dahw1d9li/image/upload/v1676032718/NoneBgColorChatBubble_thxlaa.png"
+            alt="말풍선"
+            width="500"
+            height="400"
+            layout="intrinsic"
+            className="pt-5 pb-5"
+            onClick={handleClickButtonIcon}
+          />
         </Box>
-        <Stack spacing={2.5}>
-          <Box className="text-center">
-            <MuiButton
-              color="secondary"
-              className="w-11/12 p-5 shadow-md h-25 rounded-main"
-              title="Flow 1: 한양대 주변 메뉴별 맛집 추천"
-              content={Flow1}
-              link="./survey"
-            />
-          </Box>
-          <Box className="text-center">
-            <MuiButton
-              color="secondary"
-              className="w-11/12 p-5 shadow-md h-25 rounded-main"
-              title="Flow 2: MBTI"
-              content={Flow2}
-              link="./survey"
-            />
-          </Box>
+        <Stack
+          className="flex"
+          direction={{ xs: 'column', md: 'row' }}
+          spacing={4}
+          alignItems="center"
+          justifyItems="center"
+        >
+          <MuiButton
+            className="w-11/12 p-5 shadow-md md:w-5/12 md:h-40 rounded-main hover:bg-secondary/50"
+            title={Flow1}
+            href="./survey"
+            sx={{ height: 100 }}
+            variant="contained"
+            color="button"
+          />
+          <MuiButton
+            className="w-11/12 p-5 shadow-md md:w-5/12 md:h-40 rounded-main hover:bg-secondary/50"
+            title={Flow2}
+            href="./survey"
+            sx={{ height: 100 }}
+            variant="contained"
+            color="button"
+          />
         </Stack>
       </Box>
     </>
