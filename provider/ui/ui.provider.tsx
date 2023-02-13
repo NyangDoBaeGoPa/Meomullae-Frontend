@@ -25,6 +25,7 @@ const theme = createTheme({
   components: {
     MuiTypography: {},
   },
+  spacing: 4,
   palette: {
     primary: {
       main: deepPurple[700],
