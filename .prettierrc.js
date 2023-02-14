@@ -1,7 +1,7 @@
 module.exports = {
   printWidth: 100,
   singleQuote: true,
-  trailingComma: "all",
+  trailingComma: 'all',
   tabWidth: 2,
   overrides: [
     {

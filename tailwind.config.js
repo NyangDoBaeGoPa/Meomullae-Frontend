@@ -1,4 +1,5 @@
 const rem0_10 = { ...Array.from(Array(11)).map((_, i) => `${i}rem`) };
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -12,6 +13,14 @@ module.exports = {
     preflight: false,
   },
   theme: {
+    borderRadius: {
+      main: '30px',
+    },
     extend: {},
+    colors: {
+      primary: '#512DA8',
+      secondary: '#FFEE58',
+      basic: '#F2F0F9',
+    },
   },
 };

@@ -1,16 +1,30 @@
 {
-    "cSpell.words": [
-      "cloudinary",
-      "icomoon",
-      "omnm",
-      "Spoqa",
-      "tailwindcss",
-      "tanstack"
-    ],
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
-    },
-    "editor.formatOnSave": true,
-    "eslint.enable": true,
-    "eslint.validate": ["javascript", "typescript"]
-  }
+  "cSpell.words": [
+    "cloudinary",
+    "commitlint",
+    "csstype",
+    "espree",
+    "fastq",
+    "humanwhocodes",
+    "mainhome",
+    "MBTI",
+    "meomullae",
+    "minimatch",
+    "muibutton",
+    "nodelib",
+    "picocolors",
+    "pkgr",
+    "progressbar",
+    "rushstack",
+    "scandir",
+    "tailwindcss",
+    "tostringtag",
+    "trimend"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": true,
+  "eslint.enable": true,
+  "eslint.validate": ["javascript", "typescript"]
+}
