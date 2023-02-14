@@ -1,7 +1,7 @@
 import { createTheme, StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 import { ReactNode } from 'react';
 
-import { paletteTheme, typographyTheme } from './ui.const';
+import { breakPointTheme, paletteTheme, typographyTheme } from './ui.const';
 
 type Props = {
   children: ReactNode;
@@ -49,6 +49,7 @@ declare module '@mui/material/Typography' {
 const theme = createTheme({
   typography: typographyTheme,
   palette: paletteTheme,
+  breakpoints: breakPointTheme,
   spacing: 4,
 });
 

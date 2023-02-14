@@ -52,3 +52,13 @@ export const paletteTheme: ThemeOptions['palette'] = {
     contrastText: grey[900],
   },
 };
+
+export const breakPointTheme: ThemeOptions['breakpoints'] = {
+  values: {
+    xs: 0,
+    sm: 640,
+    md: 768,
+    lg: 1024,
+    xl: 1536,
+  },
+};
