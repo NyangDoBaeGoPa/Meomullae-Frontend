@@ -13,6 +13,14 @@ module.exports = {
     preflight: false,
   },
   theme: {
+    borderRadius: {
+      main: '30px',
+    },
     extend: {},
+    colors: {
+      primary: '#512DA8',
+      secondary: '#FFEE58',
+      basic: '#F2F0F9',
+    },
   },
 };

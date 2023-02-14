@@ -1,7 +1,7 @@
 ## 🔗 References
 
 - Notion Task Board (link):
-- Issue (Link)
+- Issue (Link):
 - Slack (link):
 - Others:
 

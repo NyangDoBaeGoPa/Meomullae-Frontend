@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
+    "cloudinary",
     "commitlint",
     "csstype",
     "espree",
@@ -9,9 +10,11 @@
     "MBTI",
     "meomullae",
     "minimatch",
+    "muibutton",
     "nodelib",
     "picocolors",
     "pkgr",
+    "progressbar",
     "rushstack",
     "scandir",
     "tailwindcss",
