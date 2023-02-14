@@ -1,7 +1,6 @@
 import { Rating, Divider, Button, Typography, Box } from '@mui/material';
 import Link from 'next/link';
 import { useState } from 'react';
-import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-icons/bs';
 
 import { Header } from '@/components';
 
@@ -15,11 +14,7 @@ export const FoodRecommendation = () => {
         <Box className="flex flex-col h-full w-full p-2.5">
           <Box className="flex justify-center items-center h-[40%] w-full pb-2.5">
             <Box className="flex flex-row justify-center items-center h-full w-full px-[15%] py-2.5 bg-[#C4E6FF] rounded-[20px] shadow-md">
-              <Box className="flex justify-center items-center h-full w-[10%]">
-                <Button className="flex justify-center items-center">
-                  <BsFillArrowLeftCircleFill className="flex h-full w-[50%]" />
-                </Button>
-              </Box>
+              <Box className="flex justify-center items-center h-full w-[10%]"></Box>
               <Box className="flex flex-col justify-evenly items-center h-full w-[80%] p-2.5">
                 <Box className="flex justify-center items-center h-[80%] w-full pb-2.5">
                   <Box className="flex flex-col justify-center items-center h-full w-full bg-[#FFF7CB] rounded-[20px] shadow-md">
@@ -40,11 +35,7 @@ export const FoodRecommendation = () => {
                   </Button>
                 </Link>
               </Box>
-              <Box className="flex justify-center items-center h-full w-[10%]">
-                <Button className="flex justify-center items-center">
-                  <BsFillArrowRightCircleFill className="flex h-full w-[50%]" />
-                </Button>
-              </Box>
+              <Box className="flex justify-center items-center h-full w-[10%]"></Box>
             </Box>
           </Box>
           <Box className="flex justify-center items-center h-[20%] w-full pb-2.5">
