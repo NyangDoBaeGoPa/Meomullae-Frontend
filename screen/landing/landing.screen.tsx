@@ -1,13 +1,23 @@
 import { Box, Typography, Stack } from '@mui/material';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { useRef } from 'react';
 
-import { ModalDescription, Flow1, Flow2, Hello, Intro, Mml } from './landing.const';
+import {
+  ModalDescription,
+  RecommendationSurveyButtonTitle,
+  MBTISurveyButtonTitle,
+  IntroTitle,
+  IntroDescription,
+  IntroDescriptionBold,
+} from './landing.const';
 
 import { LogoHeader, Modal, ModalRef, Button } from '@/components';
 
 export const LandingScreen = () => {
+  const router = useRouter();
   const modalRef = useRef<ModalRef>(null);
+
   const handleClickButtonIcon = () => {
     const isModalOpened = modalRef.current?.isOpen;
     if (isModalOpened) {
@@ -16,19 +26,28 @@ export const LandingScreen = () => {
     }
     modalRef.current?.open();
   };
+
+  const handleClickMBTISurveyButton = () => {
+    router.push('/survey');
+  };
+
+  const handleClickRecommendSurveyButton = () => {
+    router.push('/survey');
+  };
+
   return (
     <>
       <LogoHeader />
       <Modal ref={modalRef} description={ModalDescription} />
       <Box className="flex flex-col justify-center bg-basic">
         <Box className="pt-5 leading-9 text-center" typography="h1">
-          {Hello}
+          {IntroTitle}
         </Box>
         <Box className="pt-4 leading-9 text-center">
           <Typography component="span" variant="h2">
-            {Intro}
+            {IntroDescription}
             <Typography component="span" variant="h2_extrabold" className="pl-1 text-primary">
-              {Mml}
+              {IntroDescriptionBold}
             </Typography>
           </Typography>
         </Box>
@@ -44,29 +63,27 @@ export const LandingScreen = () => {
           />
         </Box>
         <Stack
-          className="flex"
           direction={{ xs: 'column', md: 'row' }}
           spacing={4}
           alignItems="center"
-          justifyItems="center"
           justifyContent="center"
         >
           <Button
-            className="w-11/12 p-5 shadow-md md:w-5/12 md:h-40 rounded-main hover:bg-secondary/50"
-            title={Flow1}
-            href="./survey"
-            sx={{ height: 100 }}
+            className="w-11/12 p-5 shadow-md md:w-5/12 md:h-40 rounded-main"
+            onClick={handleClickRecommendSurveyButton}
             variant="contained"
             color="button"
-          />
+          >
+            {RecommendationSurveyButtonTitle}
+          </Button>
           <Button
-            className="w-11/12 p-5 shadow-md md:w-5/12 md:h-40 rounded-main hover:bg-secondary/50"
-            title={Flow2}
-            href="./survey"
-            sx={{ height: 100 }}
+            className="w-11/12 p-5 shadow-md md:w-5/12 md:h-40 rounded-main"
+            onClick={handleClickMBTISurveyButton}
             variant="contained"
             color="button"
-          />
+          >
+            {MBTISurveyButtonTitle}
+          </Button>
         </Stack>
       </Box>
     </>
