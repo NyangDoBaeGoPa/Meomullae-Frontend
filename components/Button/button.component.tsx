@@ -15,12 +15,13 @@ export const Button = ({
   ...props
 }: MuiButtonProps) => {
   const MUIButtonClassName = `${className} hover:bg-secondary/50`;
+  const MUIButtonClassName2 = `${className} active:bg-secondary/50`;
 
   return (
     <MUIButton
       color={color}
       size={size}
-      className={MUIButtonClassName}
+      className={`${MUIButtonClassName} ${MUIButtonClassName2}`}
       sx={{ ...sx, typography: typography }}
       {...props}
     >
