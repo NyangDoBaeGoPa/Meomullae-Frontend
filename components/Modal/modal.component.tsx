@@ -37,6 +37,7 @@ export const Modal = forwardRef<ModalRef, ModalProps>(({ description }, ref) => 
           alignItems: 'center',
           justifyContent: 'center',
           textAlign: 'center',
+          cursor: 'pointer',
         },
       }}
     >
