@@ -10,6 +10,9 @@ declare module '@mui/material' {
   interface ButtonPropsColorOverrides {
     button: true;
   }
+  interface ToggleButtonPropsColorOverrides {
+    button: true;
+  }
 }
 declare module '@mui/material/styles' {
   interface TypographyVariants {

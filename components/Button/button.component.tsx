@@ -14,7 +14,7 @@ export const Button = ({
   className,
   ...props
 }: MuiButtonProps) => {
-  const MUIButtonClassName = `${className} hover:bg-secondary/50`;
+  const MUIButtonClassName = `hover:bg-secondary/50 ${className}`;
 
   return (
     <MUIButton

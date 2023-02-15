@@ -1,49 +1,70 @@
-import { Box, Typography, Stack } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 
-import { LogoHeader, Button } from '@/components';
+import { LogoHeader, Button, ToggleButton } from '@/components';
 
 export const SurveyScreen = () => {
   return (
     <>
       <LogoHeader></LogoHeader>
-      <Box className="flex flex-col w-full h-[100vh] justify-items-center" bgcolor="primary.light">
-        <Box className="p-5 text-center">
-          <Typography variant="question_semibold">당신의 성별을 알려주세요!</Typography>
+      <Box className="flex flex-col items-center justify-around w-full h-full">
+        <Box className="p-6 text-center" typography="question_semibold">
+          당신의 성별을 알려주세요!
         </Box>
-        <Box className="flex justify-center w-full">
-          <Box className="w-11/12">
-            <Stack spacing={2.5} alignItems="stretch" justifyContent="center">
-              <Button
-                color="secondary"
-                className="rounded-main h-14"
-                title="남자"
-                typography="answer_regular"
-              />
-              <Button
-                color="secondary"
-                className="rounded-main h-14"
-                title="여자"
-                typography="answer_regular"
-              />
-            </Stack>
-          </Box>
+        <Box className="flex flex-col items-stretch w-82 md:w-180">
+          <Stack
+            spacing={5}
+            alignItems="center"
+            justifyContent="center"
+            justifyItems="center"
+            direction={{ xs: 'column', md: 'row' }}
+            flexWrap="wrap"
+            className="md:gap-5"
+          >
+            <ToggleButton
+              value="answer"
+              color="button"
+              className="h-16 border-none md:w-40 md:h-40 rounded-main"
+              typography="answer_regular"
+            >
+              오잉!
+            </ToggleButton>
+            <ToggleButton
+              value="answer"
+              color="button"
+              className="h-16 border-none md:w-40 md:h-40 rounded-main"
+              typography="answer_regular"
+            >
+              오잉!
+            </ToggleButton>
+            <ToggleButton
+              value="answer"
+              color="button"
+              className="h-16 border-none md:w-40 md:h-40 rounded-main"
+              typography="answer_regular"
+            >
+              오잉!
+            </ToggleButton>
+          </Stack>
         </Box>
-        <Box className="flex justify-center pt-14">
-          <Box className="w-11/12">
-            <Stack spacing={0.3215} direction="row" justifyContent="center" alignItems="stretch">
-              <Button
-                className="w-full h-10 border-2 border-primary rounded-main"
-                title="뒤로가기"
-                variant="outlined"
-                typography="next_bold"
-              />
-              <Button
-                className="w-full h-10 rounded-main"
-                title="다음으로"
-                typography="next_bold"
-              />
-            </Stack>
-          </Box>
+        <Box className="flex flex-col justify-center align-bottom w-80 md:w-96 pt-14">
+          <Stack spacing={0.5125} direction="row" justifyContent="center" alignItems="stretch">
+            <Button
+              className="w-full h-10 bg-white border-2 border-primary rounded-main hover:bg-primary/50 hover:text-white hover:border-none"
+              variant="outlined"
+              typography="next_bold"
+              color="primary"
+            >
+              뒤로가기
+            </Button>
+            <Button
+              className="w-full h-10 rounded-main hover:bg-primary/50"
+              typography="next_bold"
+              variant="contained"
+              color="primary"
+            >
+              다음으로
+            </Button>
+          </Stack>
         </Box>
       </Box>
     </>

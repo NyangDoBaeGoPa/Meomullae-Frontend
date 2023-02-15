@@ -16,11 +16,18 @@ module.exports = {
     borderRadius: {
       main: '30px',
     },
-    extend: {},
+    extend: {
+      width: {
+        82: '21rem',
+        180: '45rem',
+      },
+    },
     colors: {
       primary: '#512DA8',
       secondary: '#FFEE58',
       basic: '#F2F0F9',
+      white: '#FFFFFF',
+      black: '#000000',
     },
   },
 };
