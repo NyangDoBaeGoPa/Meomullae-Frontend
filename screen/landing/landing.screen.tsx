@@ -43,6 +43,7 @@ export const LandingScreen = () => {
         <Stack
           direction={{ xs: 'column' }}
           spacing={{ xs: 3, md: 6 }}
+          paddingX={{ xs: 5, md: 11 }}
           alignItems="center"
           justifyContent="center"
           height={{ xs: '30%', md: '25%' }}
@@ -66,14 +67,14 @@ export const LandingScreen = () => {
             width="500"
             height="400"
             layout="intrinsic"
-            className="pt-5 pb-5"
+            className="py-5 md:p-5"
             onClick={handleClickButtonIcon}
           />
         </Box>
         <Stack
           direction={{ xs: 'column', md: 'row' }}
           spacing={{ xs: 4, md: 8 }}
-          paddingY={{ xs: 4, md: 8 }}
+          padding={{ xs: 4, md: 8 }}
           alignItems="center"
           justifyContent="center"
           height={{ xs: '35%', md: '25%' }}
