@@ -39,7 +39,7 @@ export const LandingScreen = () => {
     <>
       <Header />
       <Modal ref={modalRef} description={ModalDescription} />
-      <Stack spacing={4} className="py-5">
+      <Stack spacing={4} className="py-5 px-2.5">
         <Stack spacing={3} alignItems="center" justifyContent="center">
           <Box className="leading-9 text-center" typography="h1">
             {IntroTitle}
@@ -68,7 +68,6 @@ export const LandingScreen = () => {
         <Stack
           direction={{ xs: 'column', md: 'row' }}
           spacing={{ xs: 4, md: 8 }}
-          padding={{ xs: 4, md: 8 }}
           alignItems="center"
           justifyContent="center"
           height={{ xs: '35%', md: '25%' }}
