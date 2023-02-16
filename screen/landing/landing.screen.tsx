@@ -41,10 +41,10 @@ export const LandingScreen = () => {
       <Modal ref={modalRef} description={ModalDescription} />
       <Stack spacing={4} className="py-5 px-2.5">
         <Stack spacing={3} alignItems="center" justifyContent="center">
-          <Box className="leading-9 text-center" typography="h1">
+          <Box className="text-center" typography="h1">
             {IntroTitle}
           </Box>
-          <Box className="leading-9 text-center">
+          <Box className="text-center">
             <Typography component="span" variant="h2">
               {IntroDescription}
               <Typography component="span" variant="h2_extrabold" className="pl-1 text-primary">
