@@ -66,13 +66,12 @@ export const LandingScreen = () => {
         </Box>
         <Stack
           direction={{ xs: 'column', md: 'row' }}
-          spacing={{ xs: 4, md: 8 }}
+          spacing={{ xs: 3, md: 6 }}
           alignItems="center"
           justifyContent="center"
-          height={{ xs: '35%', md: '25%' }}
         >
           <Button
-            className="w-11/12 p-5 shadow-md md:w-5/12 md:max-w-xs h-[100px] md:h-40 rounded-main"
+            className="w-11/12 p-5 shadow-md max-w-xs md:w-5/12 md:max-w-xs h-[100px] md:h-40 rounded-main"
             onClick={handleClickRecommendSurveyButton}
             variant="contained"
             color="button"
@@ -80,7 +79,7 @@ export const LandingScreen = () => {
             {RecommendationSurveyButtonTitle}
           </Button>
           <Button
-            className="w-11/12 p-5 shadow-md md:w-5/12 md:max-w-xs h-[100px] md:h-40 rounded-main"
+            className="w-11/12 p-5 shadow-md max-w-xs md:w-5/12 md:max-w-xs h-[100px] md:h-40 rounded-main"
             onClick={handleClickMBTISurveyButton}
             variant="contained"
             color="button"
