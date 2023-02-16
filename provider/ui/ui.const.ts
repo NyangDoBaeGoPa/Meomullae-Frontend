@@ -5,6 +5,7 @@ export const typographyTheme: ThemeOptions['typography'] = {
   fontFamily: ['Inter'].join(','),
   h1: {
     fontSize: 20,
+    lineHeight: 36,
     fontWeight: 600,
   },
   h2: {

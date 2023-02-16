@@ -39,15 +39,8 @@ export const LandingScreen = () => {
     <>
       <Header />
       <Modal ref={modalRef} description={ModalDescription} />
-      <Box className="flex flex-col justify-start h-[calc(100%-60px)]">
-        <Stack
-          direction={{ xs: 'column' }}
-          spacing={{ xs: 3, md: 6 }}
-          paddingX={{ xs: 5, md: 11 }}
-          alignItems="center"
-          justifyContent="center"
-          height={{ xs: '30%', md: '25%' }}
-        >
+      <Stack spacing={4} className="py-5">
+        <Stack spacing={3} alignItems="center" justifyContent="center">
           <Box className="leading-9 text-center" typography="h1">
             {IntroTitle}
           </Box>
@@ -60,12 +53,12 @@ export const LandingScreen = () => {
             </Typography>
           </Box>
         </Stack>
-        <Box className="flex justify-center xs:h-[35%] md:h-[40%]" onClick={handleClickButtonIcon}>
+        <Box className="flex justify-center" onClick={handleClickButtonIcon}>
           <Image
             src="https://res.cloudinary.com/dahw1d9li/image/upload/v1676032718/NoneBgColorChatBubble_thxlaa.png"
             alt="말풍선"
-            width="500"
-            height="400"
+            width="355"
+            height="255"
             layout="intrinsic"
             className="py-5 md:p-5"
             onClick={handleClickButtonIcon}
@@ -97,7 +90,7 @@ export const LandingScreen = () => {
             {MBTISurveyButtonTitle}
           </Button>
         </Stack>
-      </Box>
+      </Stack>
     </>
   );
 };
