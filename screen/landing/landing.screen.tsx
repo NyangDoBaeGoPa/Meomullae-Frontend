@@ -60,7 +60,6 @@ export const LandingScreen = () => {
             width="355"
             height="255"
             layout="intrinsic"
-            className="py-5 md:p-5"
             onClick={handleClickButtonIcon}
             style={{ cursor: 'pointer' }}
           />
