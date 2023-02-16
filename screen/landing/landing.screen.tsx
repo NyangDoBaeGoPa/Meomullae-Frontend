@@ -71,7 +71,7 @@ export const LandingScreen = () => {
           justifyContent="center"
         >
           <Button
-            className="w-11/12 p-5 shadow-md max-w-xs md:w-5/12 md:max-w-[210px] max-h-[100px] md:h-40 rounded-main"
+            className="w-11/12 p-5 shadow-md max-w-[335px] md:w-5/12 md:max-w-[210px] max-h-[100px] md:h-40 rounded-main"
             onClick={handleClickRecommendSurveyButton}
             variant="contained"
             color="button"
@@ -79,7 +79,7 @@ export const LandingScreen = () => {
             {RecommendationSurveyButtonTitle}
           </Button>
           <Button
-            className="w-11/12 p-5 shadow-md max-w-xs md:w-5/12 md:max-w-[210px] max-h-[100px] md:h-40 rounded-main"
+            className="w-11/12 p-5 shadow-md max-w-[335px] md:w-5/12 md:max-w-[210px] max-h-[100px] md:h-40 rounded-main"
             onClick={handleClickMBTISurveyButton}
             variant="contained"
             color="button"
