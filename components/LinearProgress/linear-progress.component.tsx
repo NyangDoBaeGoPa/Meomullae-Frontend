@@ -10,8 +10,8 @@ export const LinearProgress = ({ value }: value) => {
       <MUILinearProgress
         variant="determinate"
         value={value}
-        className="relative w-82 md:w-180 h-9 rounded-main shadow-progress"
         color="progress"
+        className="relative bg-white w-82 md:w-180 h-9 rounded-main shadow-progress"
       ></MUILinearProgress>
       <Box
         component="span"
