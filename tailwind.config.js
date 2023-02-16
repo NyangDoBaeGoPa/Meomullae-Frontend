@@ -29,5 +29,9 @@ module.exports = {
       white: '#FFFFFF',
       black: '#000000',
     },
+    boxShadow: {
+      progress: '0px 4px 4px 0px #512DA8B2',
+      answer: '0px 4px 4px 0px #00000040',
+    },
   },
 };

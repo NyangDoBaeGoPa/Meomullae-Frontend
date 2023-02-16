@@ -13,6 +13,10 @@ declare module '@mui/material' {
   interface ToggleButtonPropsColorOverrides {
     button: true;
   }
+  interface LinearProgressPropsColorOverrides {
+    progress: true;
+    button: true;
+  }
 }
 declare module '@mui/material/styles' {
   interface TypographyVariants {
@@ -33,9 +37,11 @@ declare module '@mui/material/styles' {
   }
   interface Palette {
     button: Palette['primary'];
+    progress: Palette['primary'];
   }
   interface PaletteOptions {
     button: PaletteOptions['primary'];
+    progress: PaletteOptions['primary'];
   }
 }
 declare module '@mui/material/Typography' {

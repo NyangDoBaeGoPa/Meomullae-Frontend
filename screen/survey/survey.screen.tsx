@@ -1,16 +1,19 @@
 import { Box, Stack } from '@mui/material';
 
-import { LogoHeader, Button, ToggleButton } from '@/components';
+import { LogoHeader, Button, ToggleButton, LinearProgress } from '@/components';
 
 export const SurveyScreen = () => {
   return (
     <>
-      <LogoHeader></LogoHeader>
-      <Box className="flex flex-col items-center justify-around w-full h-full">
+      <Box className="flex flex-col items-center w-full h-full">
+        <Stack spacing={5}>
+          <LogoHeader />
+          <LinearProgress value={33} />
+        </Stack>
         <Box className="p-6 text-center" typography="question_semibold">
           당신의 성별을 알려주세요!
         </Box>
-        <Box className="flex flex-col items-stretch w-82 md:w-180">
+        <Box className="flex flex-col items-stretch justify-around min:h-1/2 w-82 md:w-180">
           <Stack
             spacing={5}
             alignItems="center"
@@ -23,7 +26,7 @@ export const SurveyScreen = () => {
             <ToggleButton
               value="answer"
               color="button"
-              className="h-16 border-none md:w-40 md:h-40 rounded-main"
+              className="h-16 border-none md:w-48 md:h-48 rounded-main "
               typography="answer_regular"
             >
               오잉!
@@ -31,7 +34,7 @@ export const SurveyScreen = () => {
             <ToggleButton
               value="answer"
               color="button"
-              className="h-16 border-none md:w-40 md:h-40 rounded-main"
+              className="h-16 border-none md:w-48 md:h-48 rounded-main"
               typography="answer_regular"
             >
               오잉!
@@ -39,7 +42,31 @@ export const SurveyScreen = () => {
             <ToggleButton
               value="answer"
               color="button"
-              className="h-16 border-none md:w-40 md:h-40 rounded-main"
+              className="h-16 border-none md:w-48 md:h-48 rounded-main"
+              typography="answer_regular"
+            >
+              오잉!
+            </ToggleButton>
+            <ToggleButton
+              value="answer"
+              color="button"
+              className="h-16 border-none md:w-48 md:h-48 rounded-main"
+              typography="answer_regular"
+            >
+              오잉!
+            </ToggleButton>
+            <ToggleButton
+              value="answer"
+              color="button"
+              className="h-16 border-none md:w-48 md:h-48 rounded-main"
+              typography="answer_regular"
+            >
+              오잉!
+            </ToggleButton>
+            <ToggleButton
+              value="answer"
+              color="button"
+              className="h-16 border-none md:w-48 md:h-48 rounded-main"
               typography="answer_regular"
             >
               오잉!
@@ -49,7 +76,7 @@ export const SurveyScreen = () => {
         <Box className="flex flex-col justify-center align-bottom w-80 md:w-96 pt-14">
           <Stack spacing={0.5125} direction="row" justifyContent="center" alignItems="stretch">
             <Button
-              className="w-full h-10 bg-white border-2 border-primary rounded-main hover:bg-primary/50 hover:text-white hover:border-none"
+              className="w-full h-10 bg-white border-2 border-primary rounded-main hover:bg-primary/50 hover:text-white hover:border-none shadow-answer"
               variant="outlined"
               typography="next_bold"
               color="primary"
@@ -57,7 +84,7 @@ export const SurveyScreen = () => {
               뒤로가기
             </Button>
             <Button
-              className="w-full h-10 rounded-main hover:bg-primary/50"
+              className="w-full h-10 rounded-main hover:bg-primary/50 shadow-answer"
               typography="next_bold"
               variant="contained"
               color="primary"
