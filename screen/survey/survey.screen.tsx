@@ -1,11 +1,11 @@
 import { Box, Typography, Stack } from '@mui/material';
 
-import { LogoHeader, Button } from '@/components';
+import { Header, Button } from '@/components';
 
 export const SurveyScreen = () => {
   return (
     <>
-      <LogoHeader></LogoHeader>
+      <Header />
       <Box className="flex flex-col w-full h-[100vh] justify-items-center" bgcolor="primary.light">
         <Box className="p-5 text-center">
           <Typography variant="question_semibold">당신의 성별을 알려주세요!</Typography>

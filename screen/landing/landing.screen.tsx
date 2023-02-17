@@ -12,7 +12,7 @@ import {
   IntroDescriptionBold,
 } from './landing.const';
 
-import { LogoHeader, Modal, ModalRef, Button } from '@/components';
+import { Header, Modal, ModalRef, Button } from '@/components';
 
 export const LandingScreen = () => {
   const router = useRouter();
@@ -37,39 +37,41 @@ export const LandingScreen = () => {
 
   return (
     <>
-      <LogoHeader />
+      <Header />
       <Modal ref={modalRef} description={ModalDescription} />
-      <Box className="flex flex-col justify-center bg-basic">
-        <Box className="pt-5 leading-9 text-center" typography="h1">
-          {IntroTitle}
-        </Box>
-        <Box className="pt-4 leading-9 text-center">
-          <Typography component="span" variant="h2">
-            {IntroDescription}
-            <Typography component="span" variant="h2_extrabold" className="pl-1 text-primary">
-              {IntroDescriptionBold}
+      <Stack spacing={4} className="py-5 px-2.5">
+        <Stack spacing={3} alignItems="center" justifyContent="center">
+          <Box className="text-center" typography="h1">
+            {IntroTitle}
+          </Box>
+          <Box className="text-center">
+            <Typography component="span" variant="h2">
+              {IntroDescription}
+              <Typography component="span" variant="h2_extrabold" className="pl-1 text-primary">
+                {IntroDescriptionBold}
+              </Typography>
             </Typography>
-          </Typography>
-        </Box>
+          </Box>
+        </Stack>
         <Box className="flex justify-center" onClick={handleClickButtonIcon}>
           <Image
             src="https://res.cloudinary.com/dahw1d9li/image/upload/v1676032718/NoneBgColorChatBubble_thxlaa.png"
             alt="말풍선"
-            width="500"
-            height="400"
+            width="355"
+            height="255"
             layout="intrinsic"
-            className="pt-5 pb-5"
             onClick={handleClickButtonIcon}
+            style={{ cursor: 'pointer' }}
           />
         </Box>
         <Stack
           direction={{ xs: 'column', md: 'row' }}
-          spacing={4}
+          spacing={{ xs: 3, md: 6 }}
           alignItems="center"
           justifyContent="center"
         >
           <Button
-            className="w-11/12 p-5 shadow-md md:w-5/12 md:h-40 rounded-main"
+            className="w-11/12 p-5 shadow-md max-w-[335px] md:w-5/12 md:max-w-[210px] max-h-[100px] md:h-40 rounded-main"
             onClick={handleClickRecommendSurveyButton}
             variant="contained"
             color="button"
@@ -77,7 +79,7 @@ export const LandingScreen = () => {
             {RecommendationSurveyButtonTitle}
           </Button>
           <Button
-            className="w-11/12 p-5 shadow-md md:w-5/12 md:h-40 rounded-main"
+            className="w-11/12 p-5 shadow-md max-w-[335px] md:w-5/12 md:max-w-[210px] max-h-[100px] md:h-40 rounded-main"
             onClick={handleClickMBTISurveyButton}
             variant="contained"
             color="button"
@@ -85,7 +87,7 @@ export const LandingScreen = () => {
             {MBTISurveyButtonTitle}
           </Button>
         </Stack>
-      </Box>
+      </Stack>
     </>
   );
 };
