@@ -5,10 +5,12 @@ export const typographyTheme: ThemeOptions['typography'] = {
   fontFamily: ['Inter'].join(','),
   h1: {
     fontSize: 20,
+    lineHeight: '36px',
     fontWeight: 600,
   },
   h2: {
     fontSize: 16,
+    lineHeight: '36px',
     fontWeight: 300,
   },
   h2_extrabold: {

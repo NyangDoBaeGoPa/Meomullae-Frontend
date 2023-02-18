@@ -1,9 +1,9 @@
 import { Box, Stack } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 
-import { LogoHeader, Button, LinearProgress, ToggleButton } from '@/components';
+import { Header, Button, LinearProgress, ToggleButton } from '@/components';
 
-export const SurveyScreen = () => {
+export const surveyScreen = () => {
   const {
     isLoading,
     error,
@@ -28,7 +28,7 @@ export const SurveyScreen = () => {
     <>
       <Box className="flex flex-col items-center w-full h-full">
         <Stack spacing={5}>
-          <LogoHeader />
+          <Header />
           <LinearProgress value={33} />
         </Stack>
         <Box className="p-6 text-center" typography="question_semibold">
