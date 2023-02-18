@@ -19,7 +19,8 @@
     "scandir",
     "tailwindcss",
     "tostringtag",
-    "trimend"
+    "trimend",
+    "tanstack"
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true

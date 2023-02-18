@@ -1,0 +1,87 @@
+{
+  "surveyId": 2,
+  "contents": [
+    {
+      "question_id": 18,
+      "question_copy": "오늘 기분은 어때요?",
+      "question_order": 6,
+      "answer_mode": "single_choice",
+      "answers": [
+        { "answer_id": 43, "answer_copy": "꿀꿀하구 우울해요…🥺", "answer_order": 1 },
+        { "answer_id": 44, "answer_copy": "행복 그 잡채!", "answer_order": 2 },
+        { "answer_id": 45, "answer_copy": "그저 그래요🙃👩‍👧‍", "answer_order": 3 },
+        {
+          "answer_id": 46,
+          "answer_copy": "맛난 거 먹으면 기분이 좋아질 것 같아요 😉",
+          "answer_order": 4
+        }
+      ]
+    },
+    {
+      "question_id": 13,
+      "question_copy": "당신의 성별을 알려주세요!",
+      "question_order": 1,
+      "answer_mode": "single_choice",
+      "answers": [
+        { "answer_id": 25, "answer_copy": "여자", "answer_order": 1 },
+        { "answer_id": 26, "answer_copy": "남자", "answer_order": 2 }
+      ]
+    },
+    {
+      "question_id": 15,
+      "question_copy": "1인당 가격대는 어느 정도로 생각하고 계신가요?",
+      "question_order": 3,
+      "answer_mode": "single_choice",
+      "answers": [
+        { "answer_id": 30, "answer_copy": "갓성비를 원해요! 1만 2천원 이하", "answer_order": 1 },
+        {
+          "answer_id": 31,
+          "answer_copy": "이정도면 충분해 1만 2천원 초과 1만 8천원 이하",
+          "answer_order": 2
+        },
+        {
+          "answer_id": 32,
+          "answer_copy": "살짝 무리해볼까? 1만 8천원 초과 2만 4천원 이하",
+          "answer_order": 3
+        },
+        { "answer_id": 33, "answer_copy": "텅장 가보자고 2만 4천원 초과", "answer_order": 4 }
+      ]
+    },
+    {
+      "question_id": 16,
+      "question_copy": "언제 시킬 예정인가요?",
+      "question_order": 4,
+      "answer_mode": "single_choice",
+      "answers": [
+        { "answer_id": 34, "answer_copy": "점심🌞", "answer_order": 1 },
+        { "answer_id": 35, "answer_copy": "간식🍩", "answer_order": 2 },
+        { "answer_id": 36, "answer_copy": "저녁🌆", "answer_order": 3 },
+        { "answer_id": 37, "answer_copy": "야식🌙", "answer_order": 4 }
+      ]
+    },
+    {
+      "question_id": 17,
+      "question_copy": "혹시 오늘이 특별한 날인가요?",
+      "question_order": 5,
+      "answer_mode": "single_choice",
+      "answers": [
+        { "answer_id": 38, "answer_copy": "생일이에요! 🥳", "answer_order": 1 },
+        { "answer_id": 39, "answer_copy": "기념일 ❤️", "answer_order": 2 },
+        { "answer_id": 40, "answer_copy": "가족경조사 👨‍👩‍👧‍👦", "answer_order": 3 },
+        { "answer_id": 41, "answer_copy": "흥미진진, 스포츠 경기날 ⚽️", "answer_order": 4 },
+        { "answer_id": 42, "answer_copy": "그냥 평범한 날이에용 ", "answer_order": 5 }
+      ]
+    },
+    {
+      "question_id": 14,
+      "question_copy": "몇 명이서 드시나요?",
+      "question_order": 2,
+      "answer_mode": "single_choice",
+      "answers": [
+        { "answer_id": 27, "answer_copy": "혼밥해요 1명", "answer_order": 1 },
+        { "answer_id": 28, "answer_copy": "둘이서 오붓하게 2명", "answer_order": 2 },
+        { "answer_id": 29, "answer_copy": "북적북적 3명 이상", "answer_order": 3 }
+      ]
+    }
+  ]
+}
