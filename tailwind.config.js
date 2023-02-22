@@ -33,5 +33,8 @@ module.exports = {
       progress: '0px 4px 4px 0px #512DA8B2',
       answer: '0px 4px 4px 0px #00000040',
     },
+    minHeight: {
+      '1/2': '50%',
+    },
   },
 };

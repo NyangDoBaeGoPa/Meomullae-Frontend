@@ -1,6 +1,6 @@
 import { Box, Typography, Stack } from '@mui/material';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
+import Router from 'next/router';
 import { useRef } from 'react';
 
 import {
@@ -15,7 +15,6 @@ import {
 import { Header, Modal, ModalRef, Button } from '@/components';
 
 export const LandingScreen = () => {
-  const router = useRouter();
   const modalRef = useRef<ModalRef>(null);
 
   const handleClickButtonIcon = () => {
@@ -28,11 +27,17 @@ export const LandingScreen = () => {
   };
 
   const handleClickMBTISurveyButton = () => {
-    router.push('/survey');
+    Router.push({
+      pathname: '/survey',
+      query: { type: 'MBTI' },
+    });
   };
 
   const handleClickRecommendSurveyButton = () => {
-    router.push('/survey');
+    Router.push({
+      pathname: '/survey',
+      query: { type: 'Category' },
+    });
   };
 
   return (

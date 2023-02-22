@@ -1,4 +1,4 @@
-import { SurveyScreen } from '@/screen';
+import { survey } from '@/screen';
 import 'tailwindcss/tailwind.css';
 
-export default SurveyScreen;
+export default survey;

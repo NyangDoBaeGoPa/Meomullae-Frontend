@@ -1,5 +1,4 @@
 import { ToggleButton as MUIToggleButton, ToggleButtonProps } from '@mui/material';
-import { useState } from 'react';
 
 type MuiToggleButtonProps = ToggleButtonProps & {
   className?: string;
@@ -13,20 +12,16 @@ export const ToggleButton = ({
   children,
   className,
   value,
+  key,
   ...props
 }: MuiToggleButtonProps) => {
-  const [selected, setSelected] = useState(false);
-  const handleToggle = () => {
-    setSelected(!selected);
-  };
   return (
     <MUIToggleButton
       value={value}
       color={color}
+      key={key}
       fullWidth={true}
-      className={`${className} shadow-answer`}
-      onClick={handleToggle}
-      selected={selected}
+      className="text-black bg-white shadow-answer "
       sx={{
         ...sx,
         typography: typography,

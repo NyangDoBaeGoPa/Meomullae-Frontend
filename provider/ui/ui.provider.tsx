@@ -17,6 +17,9 @@ declare module '@mui/material' {
     progress: true;
     button: true;
   }
+  interface ToggleButtonGroupPropsColorOverrides {
+    button: true;
+  }
 }
 declare module '@mui/material/styles' {
   interface TypographyVariants {
