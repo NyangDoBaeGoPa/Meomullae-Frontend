@@ -7,6 +7,25 @@ import { Back, Result, Go, ProgressCategory, ProgressMBTI } from './survey.const
 
 import { Header, Button, LinearProgress } from '@/components';
 
+type Answers = {
+  answer_id: number;
+  answer_copy: string;
+  answer_order: number;
+};
+
+type Contents = {
+  question_id: number;
+  question_copy: string;
+  question_order: number;
+  answer_mode: string;
+  answers: Answers[];
+};
+
+type SurveyQuestionData = {
+  surveyId: number;
+  contents: Contents[];
+};
+
 export const survey = () => {
   const [countQuestion, setCountQuestion] = useState(1);
   const [lastQuestion, setLastQuestion] = useState(false);
@@ -28,11 +47,11 @@ export const survey = () => {
 
   if (error) return 'An error has occurred:';
 
-  let result = contents.filter((question) => question.question_order === countQuestion);
+  let result = contents.filter((question: Contents) => question.question_order === countQuestion);
   const answers = result[0].answers;
   const question = result[0].question_copy;
   const FindAnswers = () => {
-    result = contents.filter((question) => question.question_order === countQuestion);
+    result = contents.filter((question: Contents) => question.question_order === countQuestion);
   };
   const handleClickGo = () => {
     if (answer) {
@@ -89,7 +108,7 @@ export const survey = () => {
               gap: 5,
             }}
           >
-            {answers.map((answerCandidates: Array<Object>) => (
+            {answers.map((answerCandidates: Answers) => (
               <ToggleButton
                 value={answerCandidates.answer_copy}
                 aria-label={answerCandidates.answer_copy}
