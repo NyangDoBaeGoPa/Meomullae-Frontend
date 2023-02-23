@@ -1,11 +1,11 @@
 import { Box, Stack, ToggleButtonGroup, ToggleButton } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
-import Router, { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 import { Back, Result, Go, ProgressCategory, ProgressMBTI } from './survey.const';
 
-import { Header, Button, LinearProgress } from '@/components';
+import { Header, Button, LinearProgress, Skeleton } from '@/components';
 
 type Answers = {
   answer_id: number;
@@ -31,7 +31,7 @@ export const SurveyScreen = () => {
   const [lastQuestion, setLastQuestion] = useState(false);
   const [answer, setAnswer] = useState('');
   const router = useRouter();
-  const Key = router.query.type;
+  const { type: Key } = router.query;
   const {
     isLoading,
     error,
@@ -43,7 +43,7 @@ export const SurveyScreen = () => {
         .then((res) => res.json())
         .then((data) => data.contents),
   });
-  if (isLoading) return 'Loading...';
+  if (isLoading) return <Skeleton />;
 
   if (error) return 'An error has occurred:';
 
@@ -61,12 +61,12 @@ export const SurveyScreen = () => {
         setCountQuestion(countQuestion + 1);
         return 1;
       } else if (Key == 'MBTI' && countQuestion == 12) {
-        Router.push({
+        router.push({
           pathname: '/MBTIresult',
         });
         return 1;
       } else if (Key == 'Category' && countQuestion == 6) {
-        Router.push({
+        router.push({
           pathname: '/FoodRecommendation',
         });
         return 1;
