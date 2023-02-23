@@ -55,6 +55,10 @@ export const typographyTheme: ThemeOptions['typography'] = {
     fontSize: 12,
     fontWeight: 400,
   },
+  ratio: {
+    fontSize: 14,
+    fontWeight: 400,
+  },
 };
 
 export const paletteTheme: ThemeOptions['palette'] = {

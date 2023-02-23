@@ -23,6 +23,7 @@ declare module '@mui/material/styles' {
     next_bold: React.CSSProperties;
     rankComment: React.CSSProperties;
     rankRestaurant: React.CSSProperties;
+    ratio: React.CSSProperties;
   }
   interface TypographyVariantsOptions {
     h1_bold: React.CSSProperties;
@@ -35,6 +36,7 @@ declare module '@mui/material/styles' {
     next_bold?: React.CSSProperties;
     rankComment: React.CSSProperties;
     rankRestaurant: React.CSSProperties;
+    ratio: React.CSSProperties;
   }
   interface Palette {
     button: Palette['primary'];
@@ -55,6 +57,7 @@ declare module '@mui/material/Typography' {
     next_bold: true;
     rankComment: true;
     rankRestaurant: true;
+    ratio: true;
   }
 }
 

@@ -4,3 +4,4 @@ export * from './Header';
 export * from './Logo';
 export * from './MuiButton';
 export * from './Rank';
+export * from './StarRatio';

@@ -1,6 +1,6 @@
-import { Typography, Stack, Box } from '@mui/material';
+import { Typography, Stack, Divider, Box } from '@mui/material';
 
-import { Header, Rank } from '@/components';
+import { Header, Rank, StarRatio } from '@/components';
 
 export const FoodRecommendation = () => {
   return (
@@ -19,20 +19,22 @@ export const FoodRecommendation = () => {
           </Box>
         </Box>
         <Box className="flex overflow-auto xs:justify-start md:justify-center items-center">
-          <Stack
-            direction={'row'}
-            spacing={5}
-            alignItems="center"
-            justifyContent="center"
-            width={640}
-          >
+          <Stack direction={'row'} spacing={5} alignItems="center" justifyContent="center">
             <Rank />
             <Rank />
             <Rank />
           </Stack>
         </Box>
+        <Stack
+          spacing={3}
+          alignItems="center"
+          justifyContent="center"
+          className="p-5 bg-[#fff] rounded-t-[50px]"
+        >
+          <StarRatio />
+          <Divider className="w-full border-secondary border-[4px]" />
+        </Stack>
       </Stack>
-
       {/* <Box className="flex flex-col h-[100vh] w-full">
         <Header />
         <Box className="flex flex-col h-full w-full p-2.5">
