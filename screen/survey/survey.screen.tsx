@@ -1,4 +1,5 @@
-import { Box, Stack, ToggleButtonGroup } from '@mui/material';
+import { Box, ToggleButtonGroup } from '@mui/material';
+import { Stack } from '@mui/system';
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -28,7 +29,7 @@ type SurveyQuestionData = {
 };
 
 export const SurveyScreen = () => {
-  const [countQuestion, setCountQuestion] = useState(1);
+  const [countQuestion, setCountQuestion] = useState(2);
   const [lastQuestion, setLastQuestion] = useState(false);
   const [answer, setAnswer] = useState('');
   const router = useRouter();
@@ -83,16 +84,18 @@ export const SurveyScreen = () => {
 
   const progress =
     Key == 'MBTI' ? ProgressMBTI[countQuestion - 1] : ProgressCategory[countQuestion - 1];
+
+  console.log(answers);
   return (
     <>
-      <Box className="flex flex-col items-center w-full h-full">
-        <Stack spacing={5}>
-          <Header />
+      <Header />
+      <Box className="flex flex-col items-center w-full h-full px-4 py-5">
+        <Stack spacing={6}>
           <LinearProgress value={progress} />
+          <Box className="text-center" typography="question_semibold">
+            {question}
+          </Box>
         </Stack>
-        <Box className="p-6 text-center" typography="question_semibold">
-          {question}
-        </Box>
         <Box className="flex flex-col items-stretch justify-around min-h-1/2 w-82 md:w-180">
           <ToggleButtonGroup
             value={answer}
@@ -115,30 +118,28 @@ export const SurveyScreen = () => {
             ))}
           </ToggleButtonGroup>
         </Box>
-        <Box className="flex flex-col justify-center align-bottom w-80 md:w-96 pt-14">
-          <Stack spacing={0.5125} direction="row" justifyContent="center" alignItems="stretch">
-            {countQuestion != 1 && (
-              <Button
-                className="w-full h-10 bg-white border-2 border-primary rounded-main hover:bg-primary/50 hover:text-white hover:border-none shadow-answer"
-                variant="outlined"
-                typography="next_bold"
-                color="primary"
-                onClick={handleClickBack}
-              >
-                {Back}
-              </Button>
-            )}
-
+        <Box className="flex flex-row justify-between w-full md:w-96 pt-14">
+          {countQuestion != 1 && (
             <Button
-              className="w-full h-10 rounded-main hover:bg-primary/50 shadow-answer"
+              className="w-40 h-10 bg-white border-2 full border-primary rounded-main hover:bg-primary/50 hover:text-white hover:border-none shadow-answer"
+              variant="outlined"
               typography="next_bold"
-              variant="contained"
               color="primary"
-              onClick={handleClickGo}
+              onClick={handleClickBack}
             >
-              {lastQuestion ? Result : Go}
+              {Back}
             </Button>
-          </Stack>
+          )}
+
+          <Button
+            className="w-40 h-10 rounded-main hover:bg-primary/50 shadow-answer"
+            typography="next_bold"
+            variant="contained"
+            color="primary"
+            onClick={handleClickGo}
+          >
+            {lastQuestion ? Result : Go}
+          </Button>
         </Box>
       </Box>
     </>

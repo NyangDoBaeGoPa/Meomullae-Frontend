@@ -11,8 +11,8 @@ export const LinearProgress = ({ value }: value) => {
         variant="determinate"
         value={value}
         color="progress"
-        className="relative bg-white w-82 md:w-180 h-9 rounded-main shadow-progress"
-      ></MUILinearProgress>
+        className="relative w-full bg-white md:w-180 h-9 rounded-main shadow-progress"
+      />
       <Box
         component="span"
         className="absolute text-center"

@@ -1,27 +1,21 @@
-import { ToggleButton as MUIToggleButton } from '@mui/material';
+import { ToggleButton as MUIToggleButton, ToggleButtonProps } from '@mui/material';
 
-type Answers = {
-  answer_id: number;
-  answer_copy: string;
-  answer_order: number;
-};
+export const ToggleButton = ({ sx, className, ...props }: ToggleButtonProps) => {
+  const toggleButtonClassName = `${className} h-16 border-none w-82 md:w-48 md:h-48 rounded-main shadow-answer hover:bg-secondary/50`;
 
-export const ToggleButton = (answers) => {
-  const answersArray = answers.items.map((answerCandidates: Answers) => (
+  return (
     <MUIToggleButton
-      value={answerCandidates.answer_copy}
-      aria-label={answerCandidates.answer_copy}
-      key={answerCandidates.answer_id}
+      {...props}
       sx={{
         backgroundColor: 'white',
         color: 'black',
         typography: 'answer_regular',
         '&.Mui-selected': { bgcolor: 'secondary.main', color: 'black' },
+        ...sx,
       }}
-      className="h-16 border-none w-82 md:w-48 md:h-48 rounded-main shadow-answer hover:bg-secondary/50"
+      className={toggleButtonClassName}
     >
-      {answerCandidates.answer_copy}
+      {props.value as string}
     </MUIToggleButton>
-  ));
-  return <>{answersArray}</>;
+  );
 };
