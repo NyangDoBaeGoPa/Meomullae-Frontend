@@ -1,11 +1,12 @@
-import { Box, Stack, ToggleButtonGroup, ToggleButton } from '@mui/material';
+import { Box, Stack, ToggleButtonGroup } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 import { Back, Result, Go, ProgressCategory, ProgressMBTI } from './survey.const';
+import { getSurveyQuestionData } from './survey.method';
 
-import { Header, Button, LinearProgress, Skeleton } from '@/components';
+import { Header, Button, LinearProgress, Skeleton, ToggleButton } from '@/components';
 
 type Answers = {
   answer_id: number;
@@ -47,12 +48,8 @@ export const SurveyScreen = () => {
 
   if (error) return 'An error has occurred:';
 
-  let result = contents.filter((question: Contents) => question.question_order === countQuestion);
-  const answers = result[0].answers;
-  const question = result[0].question_copy;
-  const FindAnswers = () => {
-    result = contents.filter((question: Contents) => question.question_order === countQuestion);
-  };
+  const { answers, question } = getSurveyQuestionData(contents, countQuestion);
+
   const handleClickGo = () => {
     if (answer) {
       if ((Key == 'MBTI' && countQuestion == 11) || (Key == 'Category' && countQuestion == 5)) {
@@ -86,7 +83,6 @@ export const SurveyScreen = () => {
 
   const progress =
     Key == 'MBTI' ? ProgressMBTI[countQuestion - 1] : ProgressCategory[countQuestion - 1];
-  FindAnswers();
   return (
     <>
       <Box className="flex flex-col items-center w-full h-full">
@@ -113,13 +109,6 @@ export const SurveyScreen = () => {
                 value={answerCandidates.answer_copy}
                 aria-label={answerCandidates.answer_copy}
                 key={answerCandidates.answer_id}
-                sx={{
-                  backgroundColor: 'white',
-                  color: 'black',
-                  typography: 'answer_regular',
-                  '&.Mui-selected': { bgcolor: 'secondary.main', color: 'black' },
-                }}
-                className="h-16 border-none w-82 md:w-48 md:h-48 rounded-main shadow-answer hover:bg-secondary/50"
               >
                 {answerCandidates.answer_copy}
               </ToggleButton>
