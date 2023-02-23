@@ -1,15 +1,15 @@
-import { Rating, Divider, Button, Typography, Box } from '@mui/material';
-import Link from 'next/link';
-import { useState } from 'react';
+import { Stack, Box } from '@mui/material';
 
 import { Header } from '@/components';
 
 export const FoodRecommendation = () => {
-  const [name] = useState(['대연각', '금룡', '홍콩반점']);
-
   return (
     <>
-      <Box className="flex flex-col h-[100vh] w-full">
+      <Header />
+      <Stack spacing={5} className="pt-5 px-2.5">
+        <Box className="text-center" typography="h1_bold"></Box>
+      </Stack>
+      {/* <Box className="flex flex-col h-[100vh] w-full">
         <Header />
         <Box className="flex flex-col h-full w-full p-2.5">
           <Box className="flex justify-center items-center h-[40%] w-full pb-2.5">
@@ -81,7 +81,7 @@ export const FoodRecommendation = () => {
             </Box>
           </Box>
         </Box>
-      </Box>
+      </Box> */}
     </>
   );
 };

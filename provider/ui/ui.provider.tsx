@@ -13,6 +13,8 @@ declare module '@mui/material' {
 }
 declare module '@mui/material/styles' {
   interface TypographyVariants {
+    h1_bold: React.CSSProperties;
+    h1_extrabold: React.CSSProperties;
     h2_extrabold: React.CSSProperties;
     button_regular: React.CSSProperties;
     progressbar_semibold: React.CSSProperties;
@@ -21,6 +23,8 @@ declare module '@mui/material/styles' {
     next_bold: React.CSSProperties;
   }
   interface TypographyVariantsOptions {
+    h1_bold: React.CSSProperties;
+    h1_extrabold: React.CSSProperties;
     h2_extrabold?: React.CSSProperties;
     button_regular?: React.CSSProperties;
     progressbar_semibold?: React.CSSProperties;
@@ -37,6 +41,8 @@ declare module '@mui/material/styles' {
 }
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
+    h1_bold: true;
+    h1_extrabold: true;
     h2_extrabold: true;
     button_regular: true;
     progressbar_semibold: true;
