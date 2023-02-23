@@ -1,12 +1,9 @@
 import { Inter } from '@next/font/google';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 import 'tailwindcss/tailwind.css';
 import '../styles/globals.css';
 
-import { UIProvider } from '@/provider';
-
-const queryClient = new QueryClient();
+import { QueryClientProvider, UIProvider } from '@/provider';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -16,7 +13,7 @@ const inter = Inter({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={`${inter.variable} font-sans`}>
-      <QueryClientProvider client={queryClient}>
+      <QueryClientProvider>
         <UIProvider>
           <Component {...pageProps} />
         </UIProvider>
