@@ -1,13 +1,13 @@
-import { Stack, Box } from '@mui/material';
+import { Stack } from '@mui/material';
 
-import { Header } from '@/components';
+import { Header, ResultComment } from '@/components';
 
 export const FoodRecommendation = () => {
   return (
     <>
       <Header />
       <Stack spacing={5} className="pt-5 px-2.5">
-        <Box className="text-center" typography="h1_bold"></Box>
+        <ResultComment />
       </Stack>
       {/* <Box className="flex flex-col h-[100vh] w-full">
         <Header />

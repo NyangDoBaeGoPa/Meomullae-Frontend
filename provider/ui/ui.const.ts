@@ -15,6 +15,7 @@ export const typographyTheme: ThemeOptions['typography'] = {
   },
   h1_extrabold: {
     fontSize: 20,
+    lineHeight: '36px',
     fontWeight: 800,
   },
   h2: {
