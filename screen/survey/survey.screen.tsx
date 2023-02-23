@@ -26,7 +26,7 @@ type SurveyQuestionData = {
   contents: Contents[];
 };
 
-export const survey = () => {
+export const SurveyScreen = () => {
   const [countQuestion, setCountQuestion] = useState(1);
   const [lastQuestion, setLastQuestion] = useState(false);
   const [answer, setAnswer] = useState('');
