@@ -1,14 +1,38 @@
-import { Stack } from '@mui/material';
+import { Typography, Stack, Box } from '@mui/material';
 
-import { Header, ResultComment } from '@/components';
+import { Header, Rank } from '@/components';
 
 export const FoodRecommendation = () => {
   return (
     <>
       <Header />
-      <Stack spacing={5} className="pt-5 px-2.5">
-        <ResultComment />
+      <Stack spacing={5} className="pt-5 px-2.5" flexGrow={1}>
+        <Box className="text-center" typography="h1_bold">
+          친구들과 보는 새벽 한일전 야식
+          <Box className="text-center">
+            <Typography component="span" variant="h1_extrabold" color="primary">
+              머물래
+            </Typography>
+            <Typography component="span" variant="h1_bold">
+              가 추천해봤어요!
+            </Typography>
+          </Box>
+        </Box>
+        <Box className="flex overflow-auto xs:justify-start md:justify-center items-center">
+          <Stack
+            direction={'row'}
+            spacing={5}
+            alignItems="center"
+            justifyContent="center"
+            width={640}
+          >
+            <Rank />
+            <Rank />
+            <Rank />
+          </Stack>
+        </Box>
       </Stack>
+
       {/* <Box className="flex flex-col h-[100vh] w-full">
         <Header />
         <Box className="flex flex-col h-full w-full p-2.5">

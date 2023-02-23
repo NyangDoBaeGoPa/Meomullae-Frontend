@@ -1,5 +1,5 @@
 import { createTheme, StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 import { breakPointTheme, paletteTheme, typographyTheme } from './ui.const';
 
@@ -21,6 +21,8 @@ declare module '@mui/material/styles' {
     question_semibold: React.CSSProperties;
     answer_regular: React.CSSProperties;
     next_bold: React.CSSProperties;
+    rankComment: React.CSSProperties;
+    rankRestaurant: React.CSSProperties;
   }
   interface TypographyVariantsOptions {
     h1_bold: React.CSSProperties;
@@ -31,6 +33,8 @@ declare module '@mui/material/styles' {
     question_semibold?: React.CSSProperties;
     answer_regular?: React.CSSProperties;
     next_bold?: React.CSSProperties;
+    rankComment: React.CSSProperties;
+    rankRestaurant: React.CSSProperties;
   }
   interface Palette {
     button: Palette['primary'];
@@ -49,6 +53,8 @@ declare module '@mui/material/Typography' {
     question_semibold: true;
     answer_regular: true;
     next_bold: true;
+    rankComment: true;
+    rankRestaurant: true;
   }
 }
 

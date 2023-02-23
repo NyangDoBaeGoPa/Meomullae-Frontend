@@ -47,6 +47,14 @@ export const typographyTheme: ThemeOptions['typography'] = {
     fontSize: 17,
     fontWeight: 700,
   },
+  rankComment: {
+    fontSize: 15,
+    fontWeight: 500,
+  },
+  rankRestaurant: {
+    fontSize: 12,
+    fontWeight: 400,
+  },
 };
 
 export const paletteTheme: ThemeOptions['palette'] = {
