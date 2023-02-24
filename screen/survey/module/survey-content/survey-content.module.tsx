@@ -6,7 +6,6 @@ import { useState } from 'react';
 import { getSurveyQuestionData } from '../../survey.method';
 import { Answers } from '../../survey.screen';
 
-import { SurveySkeleton } from './survey-skeleton';
 import { Back, Go, ProgressCategory, ProgressMBTI, Result } from './survey.const';
 
 import { Button, LinearProgress, ToggleButton, instance } from '@/components';
@@ -19,14 +18,11 @@ export const SurveyContentModule = () => {
   const router = useRouter();
   const { type: Key } = router.query;
 
-  const { isLoading, error, data } = useQuery({
+  const { data } = useQuery({
     queryKey: ['survey'],
     queryFn: () => instance(`/survey?type=${Key}`).then((res) => res.data),
     suspense: true,
   });
-  if (isLoading) {
-    return <SurveySkeleton />;
-  }
   const contents = data.contents;
   const { answers, question } = getSurveyQuestionData(contents, countQuestion);
 
@@ -52,11 +48,13 @@ export const SurveyContentModule = () => {
       setAnswer('');
     }
   };
+
   const handleClickBack = () => {
     setLastQuestion(false);
     setAnswer('');
     setCountQuestion(countQuestion - 1);
   };
+
   const handleAnswer = (event: React.MouseEvent<HTMLElement>, newAnswer: string) => {
     setAnswer(newAnswer);
   };

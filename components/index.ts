@@ -5,3 +5,4 @@ export * from './Logo';
 export * from './Button';
 export * from './ToggleButton';
 export * from './axios';
+export * from './Error';

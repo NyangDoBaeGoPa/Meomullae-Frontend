@@ -1,10 +1,11 @@
-import { Box } from '@mui/material';
 import { NextPage } from 'next';
 import { Suspense } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
 
 import { SurveyContentModule } from './module';
+import { SurveySkeleton } from './module/survey-content/survey-skeleton';
 
-import { Header } from '@/components';
+import { Error, Header } from '@/components';
 
 export type Answers = {
   answer_id: number;
@@ -22,9 +23,11 @@ export type Contents = {
 
 export const SurveyScreen: NextPage = () => {
   return (
-    <Suspense fallback={<Box>에러가 나버렸어요!</Box>}>
-      <Header />
-      <SurveyContentModule />
-    </Suspense>
+    <ErrorBoundary fallback={<Error />}>
+      <Suspense fallback={<SurveySkeleton />}>
+        <Header />
+        <SurveyContentModule />
+      </Suspense>
+    </ErrorBoundary>
   );
 };
