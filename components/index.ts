@@ -5,3 +5,4 @@ export * from './Logo';
 export * from './Button';
 export * from './Skeleton';
 export * from './ToggleButton';
+export * from './axios';

@@ -1,6 +1,5 @@
 import { Stack, Box, ToggleButtonGroup } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
@@ -8,7 +7,7 @@ import { Back, Go, ProgressCategory, ProgressMBTI, Result } from '../../survey.c
 import { getSurveyQuestionData } from '../../survey.method';
 import { Answers } from '../../survey.screen';
 
-import { Button, LinearProgress, Skeleton, ToggleButton } from '@/components';
+import { Button, LinearProgress, Skeleton, ToggleButton, instance } from '@/components';
 
 export const SurveyContentModule = () => {
   const [countQuestion, setCountQuestion] = useState(2);
@@ -20,15 +19,13 @@ export const SurveyContentModule = () => {
 
   const { isLoading, error, data } = useQuery({
     queryKey: ['survey'],
-    queryFn: () =>
-      axios.get(`https://meomullae.onrender.com/survey?type=${Key}`).then((res) => res.data),
+    queryFn: () => instance(`/survey?type=${Key}`).then((res) => res.data),
     suspense: true,
   });
   if (isLoading) {
     return <Skeleton />;
   }
   const contents = data.contents;
-
   const { answers, question } = getSurveyQuestionData(contents, countQuestion);
 
   const handleClickGo = () => {
