@@ -3,11 +3,13 @@ import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
-import { Back, Go, ProgressCategory, ProgressMBTI, Result } from '../../survey.const';
 import { getSurveyQuestionData } from '../../survey.method';
 import { Answers } from '../../survey.screen';
 
-import { Button, LinearProgress, Skeleton, ToggleButton, instance } from '@/components';
+import { SurveySkeleton } from './survey-skeleton';
+import { Back, Go, ProgressCategory, ProgressMBTI, Result } from './survey.const';
+
+import { Button, LinearProgress, ToggleButton, instance } from '@/components';
 
 export const SurveyContentModule = () => {
   const [countQuestion, setCountQuestion] = useState(2);
@@ -23,7 +25,7 @@ export const SurveyContentModule = () => {
     suspense: true,
   });
   if (isLoading) {
-    return <Skeleton />;
+    return <SurveySkeleton />;
   }
   const contents = data.contents;
   const { answers, question } = getSurveyQuestionData(contents, countQuestion);

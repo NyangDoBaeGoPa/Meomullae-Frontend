@@ -1,6 +1,6 @@
 import { Box, Stack, Skeleton as MUISkeleton } from '@mui/material';
 
-export const Skeleton = () => {
+export const SurveySkeleton = () => {
   return (
     <Box className="flex items-center justify-center">
       <Stack spacing={4}>
