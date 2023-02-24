@@ -17,7 +17,7 @@ type SurveyQuestionData = {
   contents: Contents[];
 };
 
-export const getSurveyQuestionData = (contents, countQuestion: number) => {
+export const getSurveyQuestionData = (contents: Contents[], countQuestion: number) => {
   const result = contents.filter((question: Contents) => question.question_order === countQuestion);
   const answers = result[0].answers;
   const question = result[0].question_copy;

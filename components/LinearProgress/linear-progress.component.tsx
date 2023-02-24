@@ -6,12 +6,12 @@ type value = {
 
 export const LinearProgress = ({ value }: value) => {
   return (
-    <Box display="flex" alignItems="center" justifyContent="center">
+    <Box display="flex" alignItems="center" justifyContent="center" className="w-full">
       <MUILinearProgress
         variant="determinate"
         value={value}
         color="progress"
-        className="relative w-full bg-white md:w-180 h-9 rounded-main shadow-progress"
+        className="relative inline-block w-full bg-white h-9 rounded-main shadow-progress"
       />
       <Box
         component="span"

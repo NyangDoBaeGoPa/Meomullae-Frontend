@@ -21,7 +21,7 @@ export const Button = ({
     <MUIButton
       color={color}
       size={size}
-      className={`${className} ${MUIButtonHover} ${MUIButtonClicked}`}
+      className={`${MUIButtonHover} ${MUIButtonClicked} ${className} `}
       sx={{ ...sx, typography: typography }}
       {...props}
     >

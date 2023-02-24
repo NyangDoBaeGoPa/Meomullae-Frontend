@@ -64,7 +64,7 @@ export const SurveyContentModule = () => {
 
   return (
     <Box className="flex flex-col items-center w-full h-full px-4 py-5">
-      <Stack spacing={6}>
+      <Stack spacing={6} className="inline-block w-full">
         <LinearProgress value={progress} />
         <Box className="text-center" typography="question_semibold">
           {question}
@@ -93,10 +93,10 @@ export const SurveyContentModule = () => {
           ))}
         </ToggleButtonGroup>
       </Box>
-      <Box className="flex flex-row justify-between w-full md:w-96 pt-14">
+      <Box className="flex flex-row justify-between w-full pt-14">
         {countQuestion != 1 && (
           <Button
-            className="w-40 h-10 bg-white border-2 full border-primary rounded-main hover:bg-primary/50 hover:text-white hover:border-none shadow-answer"
+            className="w-40 h-10 bg-white border-2 full border-primary rounded-main hover:bg-primary/50 active:bg-primary/50 hover:text-white hover:border-none shadow-answer"
             variant="outlined"
             typography="next_bold"
             color="primary"
@@ -107,7 +107,7 @@ export const SurveyContentModule = () => {
         )}
 
         <Button
-          className="w-40 h-10 rounded-main hover:bg-primary/50 shadow-answer"
+          className="w-40 h-10 rounded-main hover:bg-primary/50 active:bg-primary/50 shadow-answer"
           typography="next_bold"
           variant="contained"
           color="primary"
