@@ -1,5 +1,6 @@
 import { Stack, Box, ToggleButtonGroup } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
@@ -17,22 +18,16 @@ export const SurveyContentModule = () => {
   const router = useRouter();
   const { type: Key } = router.query;
 
-  const {
-    isLoading,
-    error,
-    data: contents,
-  } = useQuery({
+  const { isLoading, error, data } = useQuery({
     queryKey: ['survey'],
     queryFn: () =>
-      fetch(`https://meomullae.onrender.com/survey?type=${Key}`)
-        .then((res) => res.json())
-        .then((data) => data.contents),
+      axios.get(`https://meomullae.onrender.com/survey?type=${Key}`).then((res) => res.data),
     suspense: true,
   });
-
   if (isLoading) {
     return <Skeleton />;
   }
+  const contents = data.contents;
 
   const { answers, question } = getSurveyQuestionData(contents, countQuestion);
 
