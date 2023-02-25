@@ -1,12 +1,9 @@
 import { Box } from '@mui/material';
 import Image from 'next/image';
 
-import { Header } from '../Header';
-
-export const Error = () => {
+export const SurveyError = () => {
   return (
     <>
-      <Header />
       <Box className="flex flex-col items-center justify-center w-full">
         <Box className="w-full py-12 text-center" typography="h1">
           어머, 에러가 발생했어요!

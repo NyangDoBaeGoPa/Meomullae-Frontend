@@ -2,10 +2,9 @@ import { NextPage } from 'next';
 import { Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 
-import { SurveyContentModule } from './module';
-import { SurveySkeleton } from './module/survey-content/survey-skeleton';
+import { SurveyContentModule, SurveyError, SurveySkeleton } from './module';
 
-import { Error, Header } from '@/components';
+import { Header } from '@/components';
 
 export type Answers = {
   answer_id: number;
@@ -23,11 +22,13 @@ export type Contents = {
 
 export const SurveyScreen: NextPage = () => {
   return (
-    <ErrorBoundary fallback={<Error />}>
-      <Suspense fallback={<SurveySkeleton />}>
-        <Header />
-        <SurveyContentModule />
-      </Suspense>
-    </ErrorBoundary>
+    <>
+      <Header />
+      <ErrorBoundary fallback={<SurveyError />}>
+        <Suspense fallback={<SurveySkeleton />}>
+          <SurveyContentModule />
+        </Suspense>
+      </ErrorBoundary>
+    </>
   );
 };
