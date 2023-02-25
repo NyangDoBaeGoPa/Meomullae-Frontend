@@ -69,13 +69,13 @@ export const SurveyContentModule = () => {
 
   return (
     <Box className="flex flex-col items-center w-full h-full px-4 py-5">
-      <Stack spacing={6} className="inline-block w-full">
+      <Stack spacing={6} className="inline-block w-79 md:w-125 lg:w-180">
         <LinearProgress value={progress} />
         <Box className="text-center" typography="question_semibold">
           {question}
         </Box>
       </Stack>
-      <Box className="flex flex-col items-stretch justify-around min-h-1/2 w-82 md:w-180">
+      <Box className="flex flex-col items-stretch justify-around min-h-1/2 w-79 md:w-125 lg:w-full">
         <ToggleButtonGroup
           value={answer}
           exclusive
@@ -91,17 +91,17 @@ export const SurveyContentModule = () => {
               value={answerCandidates.answer_copy}
               aria-label={answerCandidates.answer_copy}
               key={answerCandidates.answer_id}
-              className="h-16 border-none w-82 md:w-48 md:h-48 rounded-main shadow-answer hover:bg-secondary/50"
+              className="h-16 border-none w-79 md:w-48 md:h-48 lg:w-52 lg:h-52 rounded-main shadow-answer hover:bg-secondary/50"
             >
               {answerCandidates.answer_copy}
             </ToggleButton>
           ))}
         </ToggleButtonGroup>
       </Box>
-      <Box className="flex flex-row justify-between w-full pt-14">
-        {countQuestion != 1 && (
+      <Box className="flex flex-row justify-between w-79 md:w-125 lg:w-180 pt-14">
+        {countQuestion != 1 ? (
           <Button
-            className="w-40 h-10 bg-white border-2 full border-primary rounded-main hover:bg-primary/50 active:bg-primary/50 hover:text-white hover:border-none shadow-answer"
+            className="w-40 h-10 bg-white border-2 border-primary rounded-main hover:bg-primary/50 active:bg-primary/50 hover:text-white hover:border-none shadow-answer"
             variant="outlined"
             typography="next_bold"
             color="primary"
@@ -109,6 +109,8 @@ export const SurveyContentModule = () => {
           >
             {Back}
           </Button>
+        ) : (
+          <Box className="w-40 h-10" />
         )}
 
         <Button
