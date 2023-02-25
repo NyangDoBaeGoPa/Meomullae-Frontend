@@ -4,7 +4,7 @@ import { Logo } from '@/components';
 
 export const Header = () => {
   return (
-    <Box className="flex w-full justify-center items-center h-[60px] mx-2 bg-primary">
+    <Box className="flex w-full justify-center items-center h-[60px] bg-primary">
       <Logo />
     </Box>
   );
