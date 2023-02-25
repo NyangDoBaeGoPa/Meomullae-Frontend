@@ -51,13 +51,11 @@ export const SurveyContentModule = () => {
 
   const handleClickBack = () => {
     setLastQuestion(false);
-    //setAnswer('');
-    console.log(countQuestion);
+    setAnswer('');
     setCountQuestion((countQuestion) => countQuestion - 1);
   };
+
   useEffect(() => {
-    console.log(countQuestion);
-    console.log(localStorage.getItem(question));
     const BeforeAnswer = localStorage.getItem(question);
     BeforeAnswer && setAnswer(BeforeAnswer);
   }, [countQuestion]);
