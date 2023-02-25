@@ -1,7 +1,7 @@
 import { Stack, Box, ToggleButtonGroup } from '@mui/material';
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { getSurveyQuestionData } from '../../survey.method';
 import { Answers } from '../../survey.screen';
@@ -11,13 +11,12 @@ import { Back, Go, ProgressCategory, ProgressMBTI, Result } from './survey.const
 import { Button, LinearProgress, ToggleButton, instance } from '@/components';
 
 export const SurveyContentModule = () => {
-  const [countQuestion, setCountQuestion] = useState(2);
+  const [countQuestion, setCountQuestion] = useState(1);
   const [lastQuestion, setLastQuestion] = useState(false);
   const [answer, setAnswer] = useState('');
 
   const router = useRouter();
   const { type: Key } = router.query;
-
   const { data } = useQuery({
     queryKey: ['survey'],
     queryFn: () => instance(`/survey?type=${Key}`).then((res) => res.data),
@@ -25,11 +24,11 @@ export const SurveyContentModule = () => {
   });
   const contents = data.contents;
   const { answers, question } = getSurveyQuestionData(contents, countQuestion);
-
   const handleClickGo = () => {
     if (answer) {
       if ((Key == 'MBTI' && countQuestion == 11) || (Key == 'Category' && countQuestion == 5)) {
         setLastQuestion(true);
+        localStorage.setItem(question, answer);
         setAnswer('');
         setCountQuestion(countQuestion + 1);
         return 1;
@@ -44,6 +43,7 @@ export const SurveyContentModule = () => {
         });
         return 1;
       }
+      localStorage.setItem(question, answer);
       setCountQuestion(countQuestion + 1);
       setAnswer('');
     }
@@ -51,9 +51,16 @@ export const SurveyContentModule = () => {
 
   const handleClickBack = () => {
     setLastQuestion(false);
-    setAnswer('');
-    setCountQuestion(countQuestion - 1);
+    //setAnswer('');
+    console.log(countQuestion);
+    setCountQuestion((countQuestion) => countQuestion - 1);
   };
+  useEffect(() => {
+    console.log(countQuestion);
+    console.log(localStorage.getItem(question));
+    const BeforeAnswer = localStorage.getItem(question);
+    BeforeAnswer && setAnswer(BeforeAnswer);
+  }, [countQuestion]);
 
   const handleAnswer = (event: React.MouseEvent<HTMLElement>, newAnswer: string) => {
     setAnswer(newAnswer);
