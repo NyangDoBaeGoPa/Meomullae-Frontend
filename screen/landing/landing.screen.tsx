@@ -17,7 +17,6 @@ import { Header, Modal, ModalRef, Button } from '@/components';
 export const LandingScreen = () => {
   const router = useRouter();
   const modalRef = useRef<ModalRef>(null);
-
   const handleClickButtonIcon = () => {
     const isModalOpened = modalRef.current?.isOpen;
     if (isModalOpened) {
@@ -28,11 +27,17 @@ export const LandingScreen = () => {
   };
 
   const handleClickMBTISurveyButton = () => {
-    router.push('/survey');
+    router.push({
+      pathname: '/survey',
+      query: { type: 'MBTI' },
+    });
   };
 
   const handleClickRecommendSurveyButton = () => {
-    router.push('/survey');
+    router.push({
+      pathname: '/survey',
+      query: { type: 'Category' },
+    });
   };
 
   return (

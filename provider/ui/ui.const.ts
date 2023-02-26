@@ -46,12 +46,15 @@ export const paletteTheme: ThemeOptions['palette'] = {
     light: 'rgba(192, 179, 223, 0.2)',
   },
   secondary: {
-    main: yellow[400],
+    main: `${yellow[400]}80`,
     contrastText: grey[900],
   },
   button: {
     main: grey[50],
     contrastText: grey[900],
+  },
+  progress: {
+    main: `${yellow[400]}80`,
   },
 };
 

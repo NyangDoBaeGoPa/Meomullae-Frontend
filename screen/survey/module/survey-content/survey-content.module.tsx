@@ -1,0 +1,135 @@
+import { Stack, Box, ToggleButtonGroup } from '@mui/material';
+import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
+
+import { getSurveyQuestionData } from '../../survey.method';
+import { Answers } from '../../survey.screen';
+
+import { useSurveyContentDataQuery } from './survey-content-data.hook';
+import { Back, Go, ProgressCategory, ProgressMBTI, Result } from './survey.const';
+
+import { Button, LinearProgress, ToggleButton } from '@/components';
+
+export const SurveyContentModule = () => {
+  const [countQuestion, setCountQuestion] = useState(1);
+  const [lastQuestion, setLastQuestion] = useState(false);
+  const [answer, setAnswer] = useState('');
+
+  const router = useRouter();
+  const { type: Key } = router.query;
+
+  const { contents } = useSurveyContentDataQuery(Key as string);
+  const { answers, question } = getSurveyQuestionData(contents, countQuestion);
+
+  const handleClickGo = () => {
+    if (answer) {
+      const isBeforeTheLastOne =
+        (Key == 'MBTI' && countQuestion == 11) || (Key == 'Category' && countQuestion == 5);
+      const isMBTILastQuestion = Key == 'MBTI' && countQuestion == 12;
+      const isCategoryLastQuestion = Key == 'Category' && countQuestion == 6;
+
+      if (isBeforeTheLastOne) {
+        setLastQuestion(true);
+        localStorage.setItem(question, answer);
+        setAnswer('');
+        setCountQuestion(countQuestion + 1);
+        return;
+      }
+
+      if (isMBTILastQuestion) {
+        router.push({
+          pathname: '/MBTIresult',
+        });
+        return;
+      }
+
+      if (isCategoryLastQuestion) {
+        router.push({
+          pathname: '/FoodRecommendation',
+        });
+        return;
+      }
+
+      localStorage.setItem(question, answer);
+      setCountQuestion(countQuestion + 1);
+      setAnswer('');
+    }
+  };
+
+  const handleClickBack = () => {
+    setLastQuestion(false);
+    setAnswer('');
+    setCountQuestion((countQuestion) => countQuestion - 1);
+  };
+
+  useEffect(() => {
+    const BeforeAnswer = localStorage.getItem(question);
+    BeforeAnswer && setAnswer(BeforeAnswer);
+  }, [countQuestion]);
+
+  const handleAnswer = (event: React.MouseEvent<HTMLElement>, newAnswer: string) => {
+    setAnswer(newAnswer);
+  };
+
+  const progress =
+    Key == 'MBTI' ? ProgressMBTI[countQuestion - 1] : ProgressCategory[countQuestion - 1];
+
+  return (
+    <Box className="flex flex-col items-center w-full h-[calc(100%-60px)] px-4 py-5">
+      <Stack spacing={6} className="inline-block w-79 md:w-140 lg:w-180">
+        <LinearProgress value={progress} />
+        <Box className="pb-6 text-center md:pb-20" typography="question_semibold">
+          {question}
+        </Box>
+      </Stack>
+      <Box className="flex flex-col items-stretch justify-around min-h-1/2 w-79 md:w-140 lg:w-180">
+        <ToggleButtonGroup
+          value={answer}
+          exclusive
+          onChange={handleAnswer}
+          className="flex-wrap justify-center text-center"
+          aria-label="answers"
+          sx={{
+            gap: 5,
+          }}
+        >
+          {answers.map((answerCandidates: Answers) => (
+            <ToggleButton
+              value={answerCandidates.answer_copy}
+              aria-label={answerCandidates.answer_copy}
+              key={answerCandidates.answer_id}
+              className="h-16 border-none w-79 md:w-64 md:h-28 lg:w-79 lg:h-32 rounded-main shadow-answer hover:bg-secondary/50"
+            >
+              {answerCandidates.answer_copy}
+            </ToggleButton>
+          ))}
+        </ToggleButtonGroup>
+      </Box>
+      <Box className="flex flex-row justify-between w-79 md:w-140 lg:w-180 pt-14">
+        {countQuestion != 1 ? (
+          <Button
+            className="w-40 h-10 bg-white border-2 border-primary rounded-main hover:bg-primary/50 active:bg-primary/50 hover:text-white hover:border-none shadow-answer"
+            variant="outlined"
+            typography="next_bold"
+            color="primary"
+            onClick={handleClickBack}
+          >
+            {Back}
+          </Button>
+        ) : (
+          <Box className="w-40 h-10" />
+        )}
+
+        <Button
+          className="w-40 h-10 rounded-main hover:bg-primary/50 active:bg-primary/50 shadow-answer"
+          typography="next_bold"
+          variant="contained"
+          color="primary"
+          onClick={handleClickGo}
+        >
+          {lastQuestion ? Result : Go}
+        </Button>
+      </Box>
+    </Box>
+  );
+};

@@ -15,9 +15,11 @@
     "picocolors",
     "pkgr",
     "progressbar",
+    "queryclient",
     "rushstack",
     "scandir",
     "tailwindcss",
+    "tanstack",
     "tostringtag",
     "trimend"
   ],
