@@ -1,14 +1,14 @@
 import { Stack, Box, ToggleButtonGroup } from '@mui/material';
-import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 
 import { getSurveyQuestionData } from '../../survey.method';
 import { Answers } from '../../survey.screen';
 
+import { useSurveyContentDataQuery } from './survey-content-data.hook';
 import { Back, Go, ProgressCategory, ProgressMBTI, Result } from './survey.const';
 
-import { Button, LinearProgress, ToggleButton, instance } from '@/components';
+import { Button, LinearProgress, ToggleButton } from '@/components';
 
 export const SurveyContentModule = () => {
   const [countQuestion, setCountQuestion] = useState(1);
@@ -17,32 +17,39 @@ export const SurveyContentModule = () => {
 
   const router = useRouter();
   const { type: Key } = router.query;
-  const { data } = useQuery({
-    queryKey: ['survey'],
-    queryFn: () => instance(`/survey?type=${Key}`).then((res) => res.data),
-    suspense: true,
-  });
-  const contents = data.contents;
+
+  const { contents } = useSurveyContentDataQuery(Key as string);
   const { answers, question } = getSurveyQuestionData(contents, countQuestion);
+
   const handleClickGo = () => {
     if (answer) {
-      if ((Key == 'MBTI' && countQuestion == 11) || (Key == 'Category' && countQuestion == 5)) {
+      const isBeforeTheLastOne =
+        (Key == 'MBTI' && countQuestion == 11) || (Key == 'Category' && countQuestion == 5);
+      const isMBTILastQuestion = Key == 'MBTI' && countQuestion == 12;
+      const isCategoryLastQuestion = Key == 'Category' && countQuestion == 6;
+
+      if (isBeforeTheLastOne) {
         setLastQuestion(true);
         localStorage.setItem(question, answer);
         setAnswer('');
         setCountQuestion(countQuestion + 1);
-        return 1;
-      } else if (Key == 'MBTI' && countQuestion == 12) {
+        return;
+      }
+
+      if (isMBTILastQuestion) {
         router.push({
           pathname: '/MBTIresult',
         });
-        return 1;
-      } else if (Key == 'Category' && countQuestion == 6) {
+        return;
+      }
+
+      if (isCategoryLastQuestion) {
         router.push({
           pathname: '/FoodRecommendation',
         });
-        return 1;
+        return;
       }
+
       localStorage.setItem(question, answer);
       setCountQuestion(countQuestion + 1);
       setAnswer('');
